@@ -14,7 +14,6 @@ const getTugs = uid => new Promise((resolve, reject) => {
           tugsArray.push(tugObject[tugId]);
         });
       }
-      console.log(tugsArray);
       resolve(tugsArray);
     })
     .catch((error) => {

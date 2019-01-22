@@ -22,7 +22,7 @@ class Fleet extends React.Component {
 
   singleLocationView = (e) => {
     e.preventDefault();
-    const getId = 'tug12';
+    const getId = e.target.closest('.btn').id;
     this.props.history.push(`/locations/${getId}`);
   };
 
@@ -45,6 +45,7 @@ class Fleet extends React.Component {
       <TugItem
         tugs={tug}
         key={tug.id}
+        singleLocationView={this.singleLocationView}
       />
     ));
 
@@ -62,18 +63,11 @@ class Fleet extends React.Component {
           className="locations-btn"
           onClick={this.tugLocationsView}
         >View all tugs</Button>
-        <Button
-          color="light"
-          size="small"
-          className="single-tug-btn"
-          id="tug12"
-          onClick={this.singleLocationView}
-        >Single Tug Map</Button>
-        <div className="row">
-          <div className="col">
-            <ul>{tugItemComponents}</ul>
-          </div>
-        </div>
+        {/* <div className="row"> */}
+          {/* <div className="col"> */}
+            <div>{tugItemComponents}</div>
+          {/* </div> */}
+        {/* </div> */}
       </div>
     );
   }
