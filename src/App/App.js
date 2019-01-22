@@ -81,8 +81,8 @@ class App extends React.Component {
             <div className='row'>
                 <Switch>
                   <PrivateRoute path='/' exact component={Fleet} authed={authed} />
-                  <PrivateRoute path='/fleet' component={Fleet} authed={authed} />
                   <PrivateRoute path='/fleet/add' component={AddTug} authed={authed} />
+                  <PrivateRoute path='/fleet' component={Fleet} authed={authed} />
                   <PrivateRoute path='/locations/:id' component={SingleLocation} authed={authed} />
                   <PrivateRoute path='/locations' component={Locations} authed={authed} />
                   <PublicRoute path='/auth' component={Auth} authed={authed} />
