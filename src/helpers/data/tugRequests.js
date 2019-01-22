@@ -1,31 +1,20 @@
 import axios from 'axios';
-
 import apiKeys from '../apiKeys';
 
-const getTug = vessel => new Promise((resolve, reject) => {
-  axios.get(` https://services.marinetraffic.com/api/exportvessel/v:5/${apiKeys.singleVessel.apiKey}/timespan:2/mmsi:${vessel}`)
-    .then((result) => {
-      if (result.data === '') {
-        resolve('noData');
-      } else {
-        // console.log(result);
-        resolve(result.data);
-      }
-    })
-    .catch((error) => {
-      reject(error);
-    });
-});
+const baseUrl = apiKeys.firebaseConfig.databaseURL;
 
-const getTugEta = vessel => new Promise((resolve, reject) => {
-  axios.get(` https://services.marinetraffic.com/api/expectedarrivals/v:3/${apiKeys.singleVessel.apiKey}/timespan:20/mmsi:${vessel}`)
+const getTugs = uid => new Promise((resolve, reject) => {
+  axios.get(`${baseUrl}/tugs.json?orderBy="uid"&equalTo="${uid}"`)
     .then((result) => {
-      if (result === '') {
-        resolve('noData');
-      } else {
-        // console.log(result);
-        resolve(result);
+      const tugObject = result.data;
+      const tugsArray = [];
+      if (tugObject != null) {
+        Object.keys(tugObject).forEach((tugId) => {
+          tugObject[tugId].id = tugId;
+          tugsArray.push(tugObject[tugId]);
+        });
       }
+      resolve(tugsArray);
     })
     .catch((error) => {
       reject(error);
@@ -33,6 +22,5 @@ const getTugEta = vessel => new Promise((resolve, reject) => {
 });
 
 export default {
-  getTug,
-  getTugEta,
+  getTugs,
 };

@@ -1,0 +1,17 @@
+.tug-item {
+  margin: 0.5rem;
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  .card {
+    width: 50rem;
+    padding: 0.5rem;
+    .btn-img {
+      display: flex;
+      justify-content: flex-end;
+      .btn {
+        margin: auto 5px auto 5px;
+      }
+    }
+  }
+}
