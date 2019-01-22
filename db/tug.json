@@ -1,0 +1,247 @@
+{
+  "tugs": {
+    "tug1": {
+      "name": "Maggie Leavell",
+      "mmsi": 367547050,
+      "homeport": "Greenville, MS",
+      "homeportLat": 33.36191,
+      "homeportLon": -91.11597,
+      "captain": "Jonathan Bankhead",
+      "uid": "vJtxX2DnrEWTCphcqj3cHUVyyip2"
+    },
+    "tug2": {
+      "name": "Neely Leavell",
+      "mmsi": 367517790,
+      "homeport": "Greenville, MS",
+      "homeportLat": 33.36191,
+      "homeportLon": -91.11597,
+      "captain": "Jonathan Bankhead",
+      "uid": "vJtxX2DnrEWTCphcqj3cHUVyyip2"
+    },
+    "tug3": {
+      "name": "Lee Leavell",
+      "mmsi": 367575120,
+      "homeport": "Memphis, TN",
+      "homeportLat": 35.08533,
+      "homeportLon": -90.15833,
+      "captain": "Jacob Banet",
+      "uid": "vJtxX2DnrEWTCphcqj3cHUVyyip2"
+    },
+    "tug4": {
+      "name": "Janet Leavell",
+      "mmsi": 367665380,
+      "homeport": "Calvert City, KY",
+      "homeportLat": 37.03937,
+      "homeportLon": -88.44188,
+      "captain": "Sammy Hunt",
+      "uid": "vJtxX2DnrEWTCphcqj3cHUVyyip2"
+    },
+    "tug5": {
+      "name": "George Leavell",
+      "mmsi": 367665370,
+      "homeport": "Calvert City, KY",
+      "homeportLat": 37.03937,
+      "homeportLon": -88.44188,
+      "captain": "Chris Purvis",
+      "uid": "vJtxX2DnrEWTCphcqj3cHUVyyip2"
+    },
+    "tug6": {
+      "name": "Bill Wepfer",
+      "mmsi": 367546860,
+      "homeport": "Memphis, TN",
+      "homeportLat": 35.08533,
+      "homeportLon": -90.15833,
+      "captain": "Charlie Smith",
+      "uid": "vJtxX2DnrEWTCphcqj3cHUVyyip2"
+    },
+    "tug7": {
+      "name": "Annie Wepfer",
+      "mmsi": 367517810,
+      "homeport": "Memphis, TN",
+      "homeportLat": 35.08533,
+      "homeportLon": -90.15833,
+      "captain": "Luke Bergman",
+      "uid": "vJtxX2DnrEWTCphcqj3cHUVyyip2"
+    },
+    "tug8": {
+      "name": "Walt Wepfer",
+      "mmsi": 367773370,
+      "homeport": "Osceola, AR",
+      "homeportLat": 35.68621,
+      "homeportLon": -89.95445,
+      "captain": "Mitchell Penrod",
+      "uid": "vJtxX2DnrEWTCphcqj3cHUVyyip2"
+    },
+    "tug9": {
+      "name": "John Wepfer",
+      "mmsi": 367773380,
+      "homeport": "Calvert City, KY",
+      "homeportLat": 37.03937,
+      "homeportLon": -88.44188,
+      "captain": "Gabriel Dodson",
+      "uid": "vJtxX2DnrEWTCphcqj3cHUVyyip2"
+    },
+    "tug10": {
+      "name": "Joy Wepfer",
+      "mmsi": 367664870,
+      "homeport": "Calvert City, KY",
+      "homeportLat": 37.03937,
+      "homeportLon": -88.44188,
+      "captain": "Sammy Hunt",
+      "uid": "vJtxX2DnrEWTCphcqj3cHUVyyip2"
+    },
+    "tug11": {
+      "name": "Betsy Wepfer",
+      "mmsi": 367773350,
+      "homeport": "Calvert City, KY",
+      "homeportLat": 37.03937,
+      "homeportLon": -88.44188,
+      "captain": "Truman Oconnor",
+      "uid": "vJtxX2DnrEWTCphcqj3cHUVyyip2"
+    },
+    "tug12": {
+      "name": "Joy Glynn",
+      "mmsi": 368039240,
+      "homeport": "Memphis, TN",
+      "homeportLat": 35.08533,
+      "homeportLon": -90.15833,
+      "captain": "Jacob Banet",
+      "uid": "vJtxX2DnrEWTCphcqj3cHUVyyip2"
+    },
+    "tug13": {
+      "name": "Mary Wepfer",
+      "mmsi": 367517760,
+      "homeport": "Memphis, TN",
+      "homeportLat": 35.08533,
+      "homeportLon": -90.15833,
+      "captain": "Charlie Smith",
+      "uid": "vJtxX2DnrEWTCphcqj3cHUVyyip2"
+    },
+    "tug14": {
+      "name": "Marilyn Roncali",
+      "mmsi": 367546450,
+      "homeport": "Hickman, KY",
+      "homeportLat": 36.56956,
+      "homeportLon": -89.21587,
+      "captain": "Micah Jackson",
+      "uid": "vJtxX2DnrEWTCphcqj3cHUVyyip2"
+    },
+    "tug15": {
+      "name": "Ricky Robinson",
+      "mmsi": 367517770,
+      "homeport": "Hickman, KY",
+      "homeportLat": 36.56956,
+      "homeportLon": -89.21587,
+      "captain": "Truman Oconnor",
+      "uid": "vJtxX2DnrEWTCphcqj3cHUVyyip2"
+    },
+    "tug16": {
+      "name": "Lucy Wepfer",
+      "mmsi": 367575130,
+      "homeport": "Memphis, TN",
+      "homeportLat": 35.08533,
+      "homeportLon": -90.15833,
+      "captain": "Luke Bergman",
+      "uid": "vJtxX2DnrEWTCphcqj3cHUVyyip2"
+    },
+    "tug17": {
+      "name": "Stephen Foster",
+      "mmsi": 367643360,
+      "homeport": "Metropolis, IL",
+      "homeportLat": 37.14107,
+      "homeportLon": -88.71873,
+      "captain": "Brandon Emery",
+      "uid": "vJtxX2DnrEWTCphcqj3cHUVyyip2"
+    },
+    "tug18": {
+      "name": "Ken Echols",
+      "mmsi": 368047610,
+      "homeport": "Metropolis, IL",
+      "homeportLat": 37.14107,
+      "homeportLon": -88.71873,
+      "captain": "Chris Purvis",
+      "uid": "vJtxX2DnrEWTCphcqj3cHUVyyip2"
+    },
+    "tug19": {
+      "name": "Ron Mook",
+      "mmsi": 368048110,
+      "homeport": "Metropolis, IL",
+      "homeportLat": 37.14107,
+      "homeportLon": -88.71873,
+      "captain": "Brandon Emery",
+      "uid": "vJtxX2DnrEWTCphcqj3cHUVyyip2"
+    },
+    "tug20": {
+      "name": "Angeline",
+      "mmsi": 367665340,
+      "homeport": "Caruthersville, MO",
+      "homeportLat": 36.2108,
+      "homeportLon": -89.6754,
+      "captain": "Clint Adams",
+      "uid": "vJtxX2DnrEWTCphcqj3cHUVyyip2"
+    },
+    "tug21": {
+      "name": "Betsy Ross",
+      "mmsi": 367665360,
+      "homeport": "Cottonwood Point, MO",
+      "homeportLat": 36.06112,
+      "homeportLon": -89.68896,
+      "captain": "Rance White",
+      "uid": "vJtxX2DnrEWTCphcqj3cHUVyyip2"
+    },
+    "tug22": {
+      "name": "Lou Draper",
+      "mmsi": 367665350,
+      "homeport": "Cottonwood Point, MO",
+      "homeportLat": 36.06112,
+      "homeportLon": -89.68896,
+      "captain": "Rance White",
+      "uid": "vJtxX2DnrEWTCphcqj3cHUVyyip2"
+    },
+    "tug23": {
+      "name": "Miss Betty",
+      "mmsi": 367665390,
+      "homeport": "Calvert City, KY",
+      "homeportLat": 37.03937,
+      "homeportLon": -88.44188,
+      "captain": "Gabriel Dodson",
+      "uid": "vJtxX2DnrEWTCphcqj3cHUVyyip2"
+    },
+    "tug24": {
+      "name": "Amy Ross",
+      "mmsi": 367665130,
+      "homeport": "Caruthersville, MO",
+      "homeportLat": 36.2108,
+      "homeportLon": -89.6754,
+      "captain": "Clint Adams",
+      "uid": "vJtxX2DnrEWTCphcqj3cHUVyyip2"
+    },
+    "tug25": {
+      "name": "Larry Barber",
+      "mmsi": 367641970,
+      "homeport": "Osceola, AR",
+      "homeportLat": 35.68621,
+      "homeportLon": -89.95445,
+      "captain": "Mitchell Penrod",
+      "uid": "vJtxX2DnrEWTCphcqj3cHUVyyip2"
+    },
+    "tug26": {
+      "name": "Joe Ellis",
+      "mmsi": 367643070,
+      "homeport": "Osceola, AR",
+      "homeportLat": 35.68621,
+      "homeportLon": -89.95445,
+      "captain": "Mitchell Penrod",
+      "uid": "vJtxX2DnrEWTCphcqj3cHUVyyip2"
+    },
+    "tug27": {
+      "name": "Tommy Ross",
+      "mmsi": 367665330,
+      "homeport": "Osceola, AR",
+      "homeportLat": 35.68621,
+      "homeportLon": -89.95445,
+      "captain": "Micah Jackson",
+      "uid": "vJtxX2DnrEWTCphcqj3cHUVyyip2"
+    }
+  }
+}
