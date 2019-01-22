@@ -21,6 +21,10 @@ const getTugs = uid => new Promise((resolve, reject) => {
     });
 });
 
+const deleteTug = tugId => axios.delete(`${baseUrl}/tugs/${tugId}.json`);
+
+
 export default {
   getTugs,
+  deleteTug,
 };

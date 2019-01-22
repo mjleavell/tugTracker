@@ -13,6 +13,13 @@ class TugItem extends React.Component {
   static propTypes = {
     tugs: tugShape.tugShape,
     singleLocationView: PropTypes.func,
+    deleteSingleTug: PropTypes.func,
+  }
+
+  deleteTug = (e) => {
+    e.preventDefault();
+    const { deleteSingleTug, tugs } = this.props;
+    deleteSingleTug(tugs.id);
   }
 
   render() {
@@ -26,7 +33,7 @@ class TugItem extends React.Component {
             <Col xs="3">{tugs.captain}</Col>
             <Col xs="3" className="btn-img">
               <Button size="sm" color="dark"><i className="fas fa-edit"></i></Button>
-              <Button size="sm" color="dark"><i className="fas fa-trash-alt"></i></Button>
+              <Button size="sm" onClick={this.deleteTug} color="dark"><i className="fas fa-trash-alt"></i></Button>
               <Button id={tugs.id} onClick={singleLocationView} color="dark" size="sm"><i className="fas fa-map-marked-alt"></i></Button>
             </Col>
           </Row>

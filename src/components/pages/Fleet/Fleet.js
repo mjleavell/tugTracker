@@ -39,6 +39,14 @@ class Fleet extends React.Component {
     this.getAllTugs();
   }
 
+  deleteSingleTug = (tugId) => {
+    tugRequests.deleteTug(tugId)
+      .then(() => {
+        this.getAllTugs();
+      })
+      .catch(err => console.error('error with delete single tug', err));
+  }
+
   render() {
     const { tugs } = this.state;
     const tugItemComponents = tugs.map(tug => (
@@ -46,6 +54,7 @@ class Fleet extends React.Component {
         tugs={tug}
         key={tug.id}
         singleLocationView={this.singleLocationView}
+        deleteSingleTug={this.deleteSingleTug}
       />
     ));
 
@@ -63,11 +72,9 @@ class Fleet extends React.Component {
           className="locations-btn"
           onClick={this.tugLocationsView}
         >View all tugs</Button>
-        {/* <div className="row"> */}
-          {/* <div className="col"> */}
-            <div>{tugItemComponents}</div>
-          {/* </div> */}
-        {/* </div> */}
+          <div>
+            {tugItemComponents}
+          </div>
       </div>
     );
   }
