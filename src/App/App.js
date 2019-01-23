@@ -10,7 +10,7 @@ import connection from '../helpers/data/connection';
 import MyNavbar from '../components/MyNavbar/MyNavbar';
 import Auth from '../components/pages/Auth/Auth';
 import Fleet from '../components/pages/Fleet/Fleet';
-import AddTug from '../components/pages/AddTug/AddTug';
+import TugForm from '../components/pages/TugForm/TugForm';
 import Locations from '../components/pages/Locations/Locations';
 import SingleLocation from '../components/pages/SingleLocation/SingleLocation';
 import './App.scss';
@@ -78,16 +78,14 @@ class App extends React.Component {
           <React.Fragment>
             <MyNavbar isAuthed={authed} logoutClickEvent={logoutClickEvent} />
             <div className='container'>
-              <div className='row'>
                 <Switch>
                   <PrivateRoute path='/' exact component={Fleet} authed={authed} />
-                  <PrivateRoute path='/fleet/add' component={AddTug} authed={authed} />
+                  <PrivateRoute path='/fleet/add' component={TugForm} authed={authed} />
                   <PrivateRoute path='/fleet' component={Fleet} authed={authed} />
                   <PrivateRoute path='/locations/:id' component={SingleLocation} authed={authed} />
                   <PrivateRoute path='/locations' component={Locations} authed={authed} />
                   <PublicRoute path='/auth' component={Auth} authed={authed} />
                 </Switch>
-              </div>
             </div>
           </React.Fragment>
         </BrowserRouter>

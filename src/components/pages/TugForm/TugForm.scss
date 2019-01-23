@@ -1,0 +1,17 @@
+.AddTug {
+  margin-top: 1.5rem;
+  h3 {
+    text-align: center;
+  }
+  .AddTug-form {
+    display: flex;
+    justify-content: center;
+    form {
+      width: 40rem;
+      label {
+        text-align: left;
+        width: 5rem;
+      }
+    }
+  }
+}
