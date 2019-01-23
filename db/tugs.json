@@ -7,6 +7,7 @@
       "homeportLat": 33.36191,
       "homeportLon": -91.11597,
       "captain": "Jonathan Bankhead",
+      "inEdit": false,
       "uid": "vJtxX2DnrEWTCphcqj3cHUVyyip2"
     },
     "tug2": {
@@ -16,6 +17,7 @@
       "homeportLat": 33.36191,
       "homeportLon": -91.11597,
       "captain": "Jonathan Bankhead",
+      "inEdit": false,
       "uid": "vJtxX2DnrEWTCphcqj3cHUVyyip2"
     },
     "tug3": {
@@ -25,6 +27,7 @@
       "homeportLat": 35.08533,
       "homeportLon": -90.15833,
       "captain": "Jacob Banet",
+      "inEdit": false,
       "uid": "vJtxX2DnrEWTCphcqj3cHUVyyip2"
     },
     "tug4": {
@@ -34,6 +37,7 @@
       "homeportLat": 37.03937,
       "homeportLon": -88.44188,
       "captain": "Sammy Hunt",
+      "inEdit": false,
       "uid": "vJtxX2DnrEWTCphcqj3cHUVyyip2"
     },
     "tug5": {
@@ -43,6 +47,7 @@
       "homeportLat": 37.03937,
       "homeportLon": -88.44188,
       "captain": "Chris Purvis",
+      "inEdit": false,
       "uid": "vJtxX2DnrEWTCphcqj3cHUVyyip2"
     },
     "tug6": {
@@ -52,6 +57,7 @@
       "homeportLat": 35.08533,
       "homeportLon": -90.15833,
       "captain": "Charlie Smith",
+      "inEdit": false,
       "uid": "vJtxX2DnrEWTCphcqj3cHUVyyip2"
     },
     "tug7": {
@@ -61,6 +67,7 @@
       "homeportLat": 35.08533,
       "homeportLon": -90.15833,
       "captain": "Luke Bergman",
+      "inEdit": false,
       "uid": "vJtxX2DnrEWTCphcqj3cHUVyyip2"
     },
     "tug8": {
@@ -70,6 +77,7 @@
       "homeportLat": 35.68621,
       "homeportLon": -89.95445,
       "captain": "Mitchell Penrod",
+      "inEdit": false,
       "uid": "vJtxX2DnrEWTCphcqj3cHUVyyip2"
     },
     "tug9": {
@@ -79,6 +87,7 @@
       "homeportLat": 37.03937,
       "homeportLon": -88.44188,
       "captain": "Gabriel Dodson",
+      "inEdit": false,
       "uid": "vJtxX2DnrEWTCphcqj3cHUVyyip2"
     },
     "tug10": {
@@ -88,6 +97,7 @@
       "homeportLat": 37.03937,
       "homeportLon": -88.44188,
       "captain": "Sammy Hunt",
+      "inEdit": false,
       "uid": "vJtxX2DnrEWTCphcqj3cHUVyyip2"
     },
     "tug11": {
@@ -97,6 +107,7 @@
       "homeportLat": 37.03937,
       "homeportLon": -88.44188,
       "captain": "Truman Oconnor",
+      "inEdit": false,
       "uid": "vJtxX2DnrEWTCphcqj3cHUVyyip2"
     },
     "tug12": {
@@ -106,6 +117,7 @@
       "homeportLat": 35.08533,
       "homeportLon": -90.15833,
       "captain": "Jacob Banet",
+      "inEdit": false,
       "uid": "vJtxX2DnrEWTCphcqj3cHUVyyip2"
     },
     "tug13": {
@@ -115,6 +127,7 @@
       "homeportLat": 35.08533,
       "homeportLon": -90.15833,
       "captain": "Charlie Smith",
+      "inEdit": false,
       "uid": "vJtxX2DnrEWTCphcqj3cHUVyyip2"
     },
     "tug14": {
@@ -124,6 +137,7 @@
       "homeportLat": 36.56956,
       "homeportLon": -89.21587,
       "captain": "Micah Jackson",
+      "inEdit": false,
       "uid": "vJtxX2DnrEWTCphcqj3cHUVyyip2"
     },
     "tug15": {
@@ -133,6 +147,7 @@
       "homeportLat": 36.56956,
       "homeportLon": -89.21587,
       "captain": "Truman Oconnor",
+      "inEdit": false,
       "uid": "vJtxX2DnrEWTCphcqj3cHUVyyip2"
     },
     "tug16": {
@@ -142,6 +157,7 @@
       "homeportLat": 35.08533,
       "homeportLon": -90.15833,
       "captain": "Luke Bergman",
+      "inEdit": false,
       "uid": "vJtxX2DnrEWTCphcqj3cHUVyyip2"
     },
     "tug17": {
@@ -151,6 +167,7 @@
       "homeportLat": 37.14107,
       "homeportLon": -88.71873,
       "captain": "Brandon Emery",
+      "inEdit": false,
       "uid": "vJtxX2DnrEWTCphcqj3cHUVyyip2"
     },
     "tug18": {
@@ -160,6 +177,7 @@
       "homeportLat": 37.14107,
       "homeportLon": -88.71873,
       "captain": "Chris Purvis",
+      "inEdit": false,
       "uid": "vJtxX2DnrEWTCphcqj3cHUVyyip2"
     },
     "tug19": {
@@ -169,6 +187,7 @@
       "homeportLat": 37.14107,
       "homeportLon": -88.71873,
       "captain": "Brandon Emery",
+      "inEdit": false,
       "uid": "vJtxX2DnrEWTCphcqj3cHUVyyip2"
     },
     "tug20": {
@@ -178,6 +197,7 @@
       "homeportLat": 36.2108,
       "homeportLon": -89.6754,
       "captain": "Clint Adams",
+      "inEdit": false,
       "uid": "vJtxX2DnrEWTCphcqj3cHUVyyip2"
     },
     "tug21": {
@@ -187,6 +207,7 @@
       "homeportLat": 36.06112,
       "homeportLon": -89.68896,
       "captain": "Rance White",
+      "inEdit": false,
       "uid": "vJtxX2DnrEWTCphcqj3cHUVyyip2"
     },
     "tug22": {
@@ -196,6 +217,7 @@
       "homeportLat": 36.06112,
       "homeportLon": -89.68896,
       "captain": "Rance White",
+      "inEdit": false,
       "uid": "vJtxX2DnrEWTCphcqj3cHUVyyip2"
     },
     "tug23": {
@@ -205,6 +227,7 @@
       "homeportLat": 37.03937,
       "homeportLon": -88.44188,
       "captain": "Gabriel Dodson",
+      "inEdit": false,
       "uid": "vJtxX2DnrEWTCphcqj3cHUVyyip2"
     },
     "tug24": {
@@ -214,6 +237,7 @@
       "homeportLat": 36.2108,
       "homeportLon": -89.6754,
       "captain": "Clint Adams",
+      "inEdit": false,
       "uid": "vJtxX2DnrEWTCphcqj3cHUVyyip2"
     },
     "tug25": {
@@ -223,6 +247,7 @@
       "homeportLat": 35.68621,
       "homeportLon": -89.95445,
       "captain": "Mitchell Penrod",
+      "inEdit": false,
       "uid": "vJtxX2DnrEWTCphcqj3cHUVyyip2"
     },
     "tug26": {
@@ -232,6 +257,7 @@
       "homeportLat": 35.68621,
       "homeportLon": -89.95445,
       "captain": "Mitchell Penrod",
+      "inEdit": false,
       "uid": "vJtxX2DnrEWTCphcqj3cHUVyyip2"
     },
     "tug27": {
@@ -241,6 +267,7 @@
       "homeportLat": 35.68621,
       "homeportLon": -89.95445,
       "captain": "Micah Jackson",
+      "inEdit": false,
       "uid": "vJtxX2DnrEWTCphcqj3cHUVyyip2"
     }
   }

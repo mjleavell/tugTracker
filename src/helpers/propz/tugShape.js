@@ -7,6 +7,7 @@ const tugShape = PropTypes.shape({
   homeportLat: PropTypes.number.isRequired,
   homeportLon: PropTypes.number.isRequired,
   captain: PropTypes.string.isRequired,
+  inEdit: PropTypes.bool.isRequired,
   uid: PropTypes.string.isRequired,
 });
 
