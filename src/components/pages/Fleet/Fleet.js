@@ -47,6 +47,22 @@ class Fleet extends React.Component {
       .catch(err => console.error('error with delete single tug', err));
   }
 
+  updateInEdit = (tugId, inEdit) => {
+    tugRequests.patchInEdit(tugId, inEdit)
+      .then(() => {
+        this.getAllTugs();
+      })
+      .catch(err => console.error('error in update in edit', err));
+  }
+
+  updateCaptain = (tugId, captain) => {
+    tugRequests.patchCaptain(tugId, captain)
+      .then(() => {
+        // this.getAllTugs();
+      })
+      .catch(err => console.error('error in update in edit', err));
+  }
+
   render() {
     const { tugs } = this.state;
     const tugItemComponents = tugs.map(tug => (
@@ -55,6 +71,8 @@ class Fleet extends React.Component {
         key={tug.id}
         singleLocationView={this.singleLocationView}
         deleteSingleTug={this.deleteSingleTug}
+        updateInEdit={this.updateInEdit}
+        updateCaptain={this.updateCaptain}
       />
     ));
 

@@ -25,8 +25,14 @@ const deleteTug = tugId => axios.delete(`${baseUrl}/tugs/${tugId}.json`);
 
 const addTug = tugObject => axios.post(`${baseUrl}/tugs.json`, tugObject);
 
+const patchInEdit = (tugId, inEdit) => axios.patch(`${baseUrl}/tugs/${tugId}.json`, { inEdit });
+
+const patchCaptain = (tugId, captain) => axios.patch(`${baseUrl}/tugs/${tugId}.json`, { captain });
+
 export default {
   getTugs,
   deleteTug,
   addTug,
+  patchInEdit,
+  patchCaptain,
 };

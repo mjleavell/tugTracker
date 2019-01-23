@@ -19,6 +19,7 @@ const defaultTug = {
   homeportLat: '',
   homeportLon: '',
   captain: '',
+  inEdit: false,
   uid: '',
 };
 
