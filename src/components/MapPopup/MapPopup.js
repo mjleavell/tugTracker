@@ -1,6 +1,6 @@
 import React from 'react';
 import { Marker, Popup } from 'react-leaflet';
-import PropTypes from 'prop-types';
+// import PropTypes from 'prop-types';
 import tugShape from '../../helpers/propz/tugShape';
 import './MapPopup.scss';
 
