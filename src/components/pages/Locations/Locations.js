@@ -1,19 +1,43 @@
 import React from 'react';
-import {
-  Map as LeafletMap,
-  Marker,
-  Popup,
-  TileLayer,
-} from 'react-leaflet';
+import { Map as LeafletMap, TileLayer } from 'react-leaflet';
+import MapPopup from '../../MapPopup/MapPopup';
+import tugRequests from '../../../helpers/data/tugRequests';
+import authRequests from '../../../helpers/data/authRequests';
 import './Locations.scss';
 
 class Locations extends React.Component {
+  state = {
+    tugs: [],
+  }
+
+  getAllTugs() {
+    const uid = authRequests.getCurrentUid();
+    tugRequests.getTugs(uid)
+      .then((tugs) => {
+        this.setState({ tugs });
+      })
+      .catch(err => console.error('error in getAllTugs', err));
+  }
+
+  componentDidMount() {
+    this.getAllTugs();
+  }
+
   render() {
+    const { tugs } = this.state;
+
+    const mapComponent = tugs.map(tug => (
+      <MapPopup
+        key={tug.id}
+        singleTug={tug}
+      />
+    ));
+
     return (
       <div className="Locations">
         <h3>All tugs will be displayed on map</h3>
         <LeafletMap
-          center={[50, 10]}
+          center={[35.08533, -90.15833]}
           zoom={6}
           maxZoom={10}
           attributionControl={true}
@@ -27,11 +51,9 @@ class Locations extends React.Component {
           <TileLayer
             url='http://{s}.tile.osm.org/{z}/{x}/{y}.png'
           />
-          <Marker position={[50, 10]}>
-            <Popup>
-              Popup for any custom information.
-            </Popup>
-          </Marker>
+          <div>
+            {mapComponent}
+          </div>
         </LeafletMap>
       </div>
     );
