@@ -16,7 +16,18 @@ const getTugs = uid => new Promise((resolve, reject) => {
     resolve(tugsArray);
   })
     .catch((error) => {
-      console.log('nodata');
+      reject(error);
+    });
+});
+
+const getSingleTug = tugId => new Promise((resolve, reject) => {
+  axios.get(`${baseUrl}/tugs/${tugId}.json`).then((result) => {
+    const singleTug = result.data;
+    singleTug.id = tugId;
+    console.log(singleTug);
+    resolve(singleTug);
+  })
+    .catch((error) => {
       reject(error);
     });
 });
@@ -31,6 +42,7 @@ const patchCaptain = (tugId, captain) => axios.patch(`${baseUrl}/tugs/${tugId}.j
 
 export default {
   getTugs,
+  getSingleTug,
   deleteTug,
   addTug,
   patchInEdit,

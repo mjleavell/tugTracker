@@ -18,7 +18,7 @@ class Locations extends React.Component {
       .catch(err => console.error('error in getAllTugs', err));
   }
 
-  componentDidMount() {
+  componentWillMount() {
     this.getAllTugs();
   }
 
@@ -27,6 +27,7 @@ class Locations extends React.Component {
 
     return (
       <div className="Locations">
+        <h3>All tugs will be displayed on map</h3>
         <Map
           tugs={tugs}
         />
