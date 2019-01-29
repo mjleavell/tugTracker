@@ -17,8 +17,8 @@ const getTug = vessel => new Promise((resolve, reject) => {
     });
 });
 
-const getTugEta = vessel => new Promise((resolve, reject) => {
-  axios.get(` https://services.marinetraffic.com/api/expectedarrivals/v:3/${apiKeys.singleVessel.apiKey}/timespan:20/mmsi:${vessel}`)
+const getTugExtended = vessel => new Promise((resolve, reject) => {
+  axios.get(` https://services.marinetraffic.com/api/exportvessel/v:5/${apiKeys.singleVessel.apiKey}/timespan:48/msgtype:extended/protocol:jsono/mmsi:${vessel}`)
     .then((result) => {
       if (result === '') {
         resolve('noData');
@@ -34,5 +34,5 @@ const getTugEta = vessel => new Promise((resolve, reject) => {
 
 export default {
   getTug,
-  getTugEta,
+  getTugExtended,
 };
