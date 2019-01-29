@@ -14,24 +14,27 @@ class SingleLocation extends React.Component {
     const tugId = this.props.match.params.id;
     tugRequests.getSingleTug(tugId).then((singleTug) => {
       marineTrafficRequests.getTugExtended(singleTug.mmsi).then((result) => {
-        const tugInfo = result.data;
+        const tugInfo = result;
         if (tugInfo.length === 0) {
-          console.log('tugInfo', tugInfo);
+          console.log(singleTug);
           this.setState({ selectedTug: [singleTug] });
         } else {
-          console.log(tugInfo);
-          this.setState({
-            selectedTug: [{
-              id: singleTug.id,
-              name: singleTug.name,
-              mmsi: singleTug.mmsi,
-              captain: singleTug.captain,
-              currentLat: tugInfo.LAT,
-              currentLon: tugInfo.LON,
-              speed: tugInfo.SPEED,
-              inEdit: singleTug.inEdit,
-              uid: singleTug.uid,
-            }],
+          tugInfo.forEach((item) => {
+            this.setState({
+              selectedTug: [{
+                id: singleTug.id,
+                name: singleTug.name,
+                mmsi: singleTug.mmsi,
+                captain: singleTug.captain,
+                currentLat: parseFloat(item[1]),
+                currentLon: parseFloat(item[2]),
+                speed: parseFloat(item[3]),
+                lastPort: item[20],
+                nextPort: item[31],
+                inEdit: singleTug.inEdit,
+                uid: singleTug.uid,
+              }],
+            });
           });
         }
       });
