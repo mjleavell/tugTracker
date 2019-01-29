@@ -1,0 +1,24 @@
+{
+  "tugs": {
+    "tug15": {
+      "name": "Ricky Robinson",
+      "mmsi": 367517770,
+      "homeport": "Hickman, KY",
+      "homeportLat": 36.56956,
+      "homeportLon": -89.21587,
+      "captain": "Truman Oconnor",
+      "inEdit": false,
+      "uid": "vJtxX2DnrEWTCphcqj3cHUVyyip2"
+    },
+    "tug7": {
+      "name": "Annie Wepfer",
+      "mmsi": 367517810,
+      "homeport": "Memphis, TN",
+      "homeportLat": 35.08533,
+      "homeportLon": -90.15833,
+      "captain": "Luke Bergman",
+      "inEdit": false,
+      "uid": "vJtxX2DnrEWTCphcqj3cHUVyyip2"
+    }
+  }
+}
