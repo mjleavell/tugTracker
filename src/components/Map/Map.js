@@ -7,21 +7,30 @@ import './Map.scss';
 class Map extends React.Component {
   static propTypes = {
     tugs: PropTypes.array,
+    selectedTug: PropTypes.array,
   }
 
   render() {
-    const { tugs } = this.props;
+    const { tugs, selectedTug } = this.props;
 
-    const mapComponent = tugs.map(tug => (
+    const allTugsComponent = () => tugs.map(tug => (
       <MapPopup
         key={tug.id}
         singleTug={tug}
       />
     ));
 
+    const singleTugComponent = () => selectedTug.map(tug => (
+      <MapPopup
+        key={tug.id}
+        singleTug={tug}
+      />
+    ));
+
+    const chooseDisplay = (selectedTug) ? singleTugComponent() : allTugsComponent();
+
     return (
       <div className="Map">
-        <h3>All tugs will be displayed on map</h3>
         <LeafletMap
           center={[35.08533, -90.15833]}
           zoom={6}
@@ -37,7 +46,7 @@ class Map extends React.Component {
           <TileLayer
             url='http://{s}.tile.osm.org/{z}/{x}/{y}.png'
           />
-          <div>{mapComponent}</div>
+          {chooseDisplay}
         </LeafletMap>
       </div>
     );

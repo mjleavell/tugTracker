@@ -35,7 +35,7 @@ class Fleet extends React.Component {
       .catch(err => console.error('error in getAllTugs', err));
   }
 
-  componentDidMount() {
+  componentWillMount() {
     this.getAllTugs();
   }
 
