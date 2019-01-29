@@ -6,15 +6,13 @@ import './SingleLocation.scss';
 
 class SingleLocation extends React.Component {
   state = {
-    selectedTug: {},
-    tugs: [],
+    selectedTug: [],
   }
 
   getSingleTug = () => {
     const tugId = this.props.match.params.id;
     tugRequests.getSingleTug(tugId).then((singleTug) => {
-      console.log(singleTug);
-      this.setState({ selectedTug: singleTug });
+      this.setState({ selectedTug: [singleTug] });
     })
       .catch(err => console.error('error getSingleTug', err));
   }
@@ -28,10 +26,8 @@ class SingleLocation extends React.Component {
 
     return (
       <div className="SingleLocation">
-        <h3>One tug will be displayed on the map</h3>
         <Map
           selectedTug={selectedTug}
-          // tugs={tugs}
         />
       </div>
     );

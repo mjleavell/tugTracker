@@ -24,7 +24,6 @@ const getSingleTug = tugId => new Promise((resolve, reject) => {
   axios.get(`${baseUrl}/tugs/${tugId}.json`).then((result) => {
     const singleTug = result.data;
     singleTug.id = tugId;
-    console.log(singleTug);
     resolve(singleTug);
   })
     .catch((error) => {
