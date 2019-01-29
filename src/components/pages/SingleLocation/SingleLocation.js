@@ -20,7 +20,19 @@ class SingleLocation extends React.Component {
           this.setState({ selectedTug: [singleTug] });
         } else {
           console.log(tugInfo);
-          this.setState({ selectedTug: [tugInfo] });
+          this.setState({
+            selectedTug: [{
+              id: singleTug.id,
+              name: singleTug.name,
+              mmsi: singleTug.mmsi,
+              captain: singleTug.captain,
+              currentLat: tugInfo.LAT,
+              currentLon: tugInfo.LON,
+              speed: tugInfo.SPEED,
+              inEdit: singleTug.inEdit,
+              uid: singleTug.uid,
+            }],
+          });
         }
       });
     })

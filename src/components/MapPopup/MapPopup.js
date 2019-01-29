@@ -14,11 +14,11 @@ class MapPopup extends React.Component {
 
     return (
       <div className="Map-Popup">
-          <Marker position={[singleTug.LAT, singleTug.LON]}>
+          <Marker position={[singleTug.currentLat, singleTug.currentLon]}>
             <Popup>
-              <h4>{singleTug.SHIPNAME}</h4>
+              <h4>{singleTug.name}</h4>
               <p>{singleTug.captain}</p>
-              <p>{singleTug.SPEED}</p>
+              <p>{singleTug.speed}</p>
             </Popup>
           </Marker>
       </div>
