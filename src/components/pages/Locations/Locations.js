@@ -13,32 +13,45 @@ class Locations extends React.Component {
   getAllTugs() {
     const uid = authRequests.getCurrentUid();
     tugRequests.getTugs(uid).then((tugs) => {
-      
       tugs.forEach((singleTug) => {
-        marineTrafficRequests.getTugExtended(singleTug.mmsi).then((result) => {
-          this.setState({ tugs });
-          const tugInfo = result;
-          if (tugInfo.length === 0) {
-            this.setState({ selectedTug: [singleTug] });
-          } else {
+        marineTrafficRequests.getTugExtended(singleTug.mmsi).then((tugInfo) => {
+          if (tugInfo.length !== 0) {
+          //   this.setState({ selectedTug: [singleTug] });
+          // } else {
             tugInfo.forEach((item) => {
-              this.setState({
-                selectedTug: [{
-                  id: singleTug.id,
-                  name: singleTug.name,
-                  mmsi: singleTug.mmsi,
-                  captain: singleTug.captain,
-                  currentLat: parseFloat(item[1]),
-                  currentLon: parseFloat(item[2]),
-                  speed: parseFloat(item[3]),
-                  lastPort: item[20],
-                  nextPort: item[31],
-                  inEdit: singleTug.inEdit,
-                  uid: singleTug.uid,
-                }],
+              const itemObject = {
+                // selectedTug: [{
+                // id: singleTug.id,
+                // name: singleTug.name,
+                // mmsi: singleTug.mmsi,
+                // captain: singleTug.captain,
+                currentLat: parseFloat(item[1]),
+                currentLon: parseFloat(item[2]),
+                speed: parseFloat(item[3]),
+                lastPort: item[20],
+                nextPort: item[31],
+                // inEdit: singleTug.inEdit,
+                // uid: singleTug.uid,
+                // }],
+              };
+              // singleTug.push({
+              //   currentLat: parseFloat(item[1]),
+              //   currentLon: parseFloat(item[2]),
+              //   speed: parseFloat(item[3]),
+              //   lastPort: item[20],
+              //   nextPort: item[31],
+              // });
+              // })
+              singleTug.push({
+                currentLat: parseFloat(item[1]),
+                currentLon: parseFloat(item[2]),
+                speed: parseFloat(item[3]),
+                lastPort: item[20],
+                nextPort: item[31],
               });
             });
           }
+          this.setState({ tugs });
         });
       });
     })
