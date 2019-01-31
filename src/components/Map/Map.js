@@ -20,14 +20,14 @@ class Map extends React.Component {
       />
     ));
 
-    const singleTugComponent = () => selectedTug.map(tug => (
+    const singleTugComponent = () => tugs.map(tug => (
       <MapPopup
         key={tug.id}
         singleTug={tug}
       />
     ));
 
-    const chooseDisplay = (selectedTug) ? singleTugComponent() : allTugsComponent();
+    const chooseDisplay = (tugs.length < 2) ? singleTugComponent() : allTugsComponent();
 
     return (
       <div className="Map">
@@ -47,6 +47,7 @@ class Map extends React.Component {
             url='http://{s}.tile.osm.org/{z}/{x}/{y}.png'
           />
           {chooseDisplay}
+          {/* {allTugsComponent()} */}
         </LeafletMap>
       </div>
     );

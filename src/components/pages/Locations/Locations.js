@@ -1,8 +1,8 @@
+/* eslint-disable max-len */
 import React from 'react';
 import Map from '../../Map/Map';
-import tugRequests from '../../../helpers/data/tugRequests';
 import authRequests from '../../../helpers/data/authRequests';
-import marineTrafficRequests from '../../../helpers/data/marineTrafficRequests';
+import smashRequest from '../../../helpers/data/smashRequest';
 import './Locations.scss';
 
 class Locations extends React.Component {
@@ -10,56 +10,18 @@ class Locations extends React.Component {
     tugs: [],
   }
 
-  getAllTugs() {
+  tugsSmash = () => {
     const uid = authRequests.getCurrentUid();
-    tugRequests.getTugs(uid).then((tugs) => {
-      tugs.forEach((singleTug) => {
-        marineTrafficRequests.getTugExtended(singleTug.mmsi).then((tugInfo) => {
-          if (tugInfo.length !== 0) {
-          //   this.setState({ selectedTug: [singleTug] });
-          // } else {
-            tugInfo.forEach((item) => {
-              const itemObject = {
-                // selectedTug: [{
-                // id: singleTug.id,
-                // name: singleTug.name,
-                // mmsi: singleTug.mmsi,
-                // captain: singleTug.captain,
-                currentLat: parseFloat(item[1]),
-                currentLon: parseFloat(item[2]),
-                speed: parseFloat(item[3]),
-                lastPort: item[20],
-                nextPort: item[31],
-                // inEdit: singleTug.inEdit,
-                // uid: singleTug.uid,
-                // }],
-              };
-              // singleTug.push({
-              //   currentLat: parseFloat(item[1]),
-              //   currentLon: parseFloat(item[2]),
-              //   speed: parseFloat(item[3]),
-              //   lastPort: item[20],
-              //   nextPort: item[31],
-              // });
-              // })
-              singleTug.push({
-                currentLat: parseFloat(item[1]),
-                currentLon: parseFloat(item[2]),
-                speed: parseFloat(item[3]),
-                lastPort: item[20],
-                nextPort: item[31],
-              });
-            });
-          }
-          this.setState({ tugs });
-        });
-      });
+    smashRequest.getTugInfo(uid).then((tugs) => {
+      console.log(tugs);
+      this.setState({ tugs });
     })
-      .catch(err => console.error('error in getAllTugs', err));
+      .catch(err => console.error('error in tugsSmash', err));
   }
 
+
   componentWillMount() {
-    this.getAllTugs();
+    this.tugsSmash();
   }
 
   render() {
@@ -67,7 +29,6 @@ class Locations extends React.Component {
 
     return (
       <div className="Locations">
-        <h3>All tugs will be displayed on map</h3>
         <Map
           tugs={tugs}
         />
