@@ -1,3 +1,4 @@
+/* eslint-disable prefer-destructuring */
 import tugRequests from './tugRequests';
 import marineTrafficRequests from './marineTrafficRequests';
 
@@ -6,36 +7,25 @@ const getTugInfo = uid => new Promise((resolve, reject) => {
   tugRequests.getTugs(uid).then((tugs) => {
     tugs.forEach((singleTug) => {
       marineTrafficRequests.getTugExtended(singleTug.mmsi).then((tugInfo) => {
+        const updatedTug = { ...singleTug };
         if (tugInfo.length !== 0) {
-          // tugInfo returns array of data
           tugInfo.forEach((item) => {
-            console.log(item);
-            // const updatedTug = {
-            //   captain: singleTug.captain,
-            //   homeport: singleTug.homeport,
-            //   currentLat: parseFloat(item[1]),
-            //   currentLon: parseFloat(item[2]),
-            //   id: singleTug.id,
-            //   inEdit: singleTug.inEdit,
-            //   mmsi: singleTug.mmsi,
-            //   name: singleTug.name,
-            //   speed: parseFloat(item[3]),
-            //   lastPort: item[20],
-            //   nextPort: item[31],
-            //   uid: singleTug.uid,
-            // };
-            const updatedTug = { ...singleTug };
+            updatedTug.currentLat = parseFloat(item[1]);
+            updatedTug.currentLon = parseFloat(item[2]);
+            updatedTug.speed = parseFloat(item[3]);
+            updatedTug.lastPort = item[20];
+            updatedTug.nextPort = item[31];
             allTugs.push(updatedTug);
           });
-        } else {
+        } else if (tugInfo.length === 0) {
           allTugs.push(singleTug);
         }
+        console.log(allTugs);
+        resolve(allTugs);
       });
     });
-    console.log(allTugs);
-    resolve(allTugs);
   })
-    .catch(err => reject(err));
+    .catch(err => reject(console.error(err), err));
 });
 
 export default { getTugInfo };

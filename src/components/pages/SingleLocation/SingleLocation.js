@@ -8,6 +8,7 @@ import marineTrafficRequests from '../../../helpers/data/marineTrafficRequests';
 class SingleLocation extends React.Component {
   state = {
     tugs: [],
+    selectedTug: [],
   }
 
   getSingleTug = () => {
@@ -16,7 +17,7 @@ class SingleLocation extends React.Component {
       marineTrafficRequests.getTugExtended(singleTug.mmsi).then((result) => {
         const tugInfo = result;
         if (tugInfo.length === 0) {
-          this.setState({ tugs: [singleTug] });
+          this.setState({ selectedTug: [singleTug] });
         } else {
           tugInfo.forEach((item) => {
             this.setState({
@@ -46,12 +47,12 @@ class SingleLocation extends React.Component {
   }
 
   render() {
-    const { selectedTug } = this.state;
+    const { tugs } = this.state;
 
     return (
       <div className="SingleLocation">
         <Map
-          selectedTug={selectedTug}
+          tugs={tugs}
         />
       </div>
     );
