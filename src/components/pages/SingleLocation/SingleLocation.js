@@ -8,7 +8,6 @@ import marineTrafficRequests from '../../../helpers/data/marineTrafficRequests';
 class SingleLocation extends React.Component {
   state = {
     tugs: [],
-    // selectedTug: [],
   }
 
   getSingleTug = () => {

@@ -1,40 +1,41 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { Map as LeafletMap, TileLayer } from 'react-leaflet';
+import {
+  Map as LeafletMap,
+  TileLayer,
+  Marker,
+  Popup,
+} from 'react-leaflet';
 import MapPopup from '../MapPopup/MapPopup';
 import './Map.scss';
 
 class Map extends React.Component {
   static propTypes = {
     tugs: PropTypes.array,
-    selectedTug: PropTypes.array,
   }
 
   render() {
-    const { tugs, selectedTug } = this.props;
+    const { tugs } = this.props;
 
-    const allTugsComponent = () => tugs.map(tug => (
-      <MapPopup
+    const tugMarker = () => tugs.map(tug => (
+      <Marker
         key={tug.id}
-        singleTug={tug}
-      />
+        position={[((tug.currentLat === undefined) ? tug.homeportLat : tug.currentLat), ((tug.currentLon === undefined) ? tug.homeportLon : tug.currentLon)]}
+      >
+        <Popup>
+          <h4>{tug.name}</h4>
+          <p>{tug.captain}</p>
+          <p>{tug.speed}</p>
+        </Popup>
+      </Marker>
     ));
-
-    const singleTugComponent = () => selectedTug.map(tug => (
-      <MapPopup
-        key={tug.id}
-        singleTug={tug}
-      />
-    ));
-
-    const chooseDisplay = (selectedTug) ? singleTugComponent() : allTugsComponent();
 
     return (
       <div className="Map">
         <LeafletMap
           center={[35.08533, -90.15833]}
           zoom={6}
-          maxZoom={10}
+          maxZoom={12}
           attributionControl={true}
           zoomControl={true}
           doubleClickZoom={true}
@@ -46,8 +47,7 @@ class Map extends React.Component {
           <TileLayer
             url='http://{s}.tile.osm.org/{z}/{x}/{y}.png'
           />
-          {/* {chooseDisplay} */}
-          {allTugsComponent()}
+          {tugMarker()}
         </LeafletMap>
       </div>
     );

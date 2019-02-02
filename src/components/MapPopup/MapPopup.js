@@ -15,7 +15,10 @@ class MapPopup extends React.Component {
 
     return (
       <div className="Map-Popup">
-          <Marker position={[latitude, longitude]}>
+          <Marker
+            key={singleTug.id}
+            position={[latitude, longitude]}
+          >
             <Popup>
               <h4>{singleTug.name}</h4>
               <p>{singleTug.captain}</p>

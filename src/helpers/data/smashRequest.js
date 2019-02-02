@@ -4,7 +4,10 @@ import marineTrafficRequests from './marineTrafficRequests';
 
 const getTugInfo = uid => new Promise((resolve, reject) => {
   const allTugs = [];
+  let tugCounter = 0;
+  let tugsLength = 0;
   tugRequests.getTugs(uid).then((tugs) => {
+    tugsLength = tugs.length;
     tugs.forEach((singleTug) => {
       marineTrafficRequests.getTugExtended(singleTug.mmsi).then((tugInfo) => {
         const updatedTug = { ...singleTug };
@@ -16,12 +19,15 @@ const getTugInfo = uid => new Promise((resolve, reject) => {
             updatedTug.lastPort = item[20];
             updatedTug.nextPort = item[31];
             allTugs.push(updatedTug);
+            tugCounter += 1;
           });
         } else if (tugInfo.length === 0) {
           allTugs.push(singleTug);
+          tugCounter += 1;
         }
-        console.log(allTugs);
-        resolve(allTugs);
+        if (tugsLength === tugCounter) {
+          resolve(allTugs);
+        }
       });
     });
   })

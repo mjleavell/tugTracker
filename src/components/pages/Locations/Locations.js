@@ -1,4 +1,3 @@
-/* eslint-disable max-len */
 import React from 'react';
 import Map from '../../Map/Map';
 import authRequests from '../../../helpers/data/authRequests';

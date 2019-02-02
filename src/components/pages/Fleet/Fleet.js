@@ -59,7 +59,6 @@ class Fleet extends React.Component {
   updateCaptain = (tugId, captain) => {
     tugRequests.patchCaptain(tugId, captain)
       .then(() => {
-        // this.getAllTugs();
       })
       .catch(err => console.error('error in update in edit', err));
   }
