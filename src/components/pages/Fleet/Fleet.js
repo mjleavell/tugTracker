@@ -30,6 +30,7 @@ class Fleet extends React.Component {
     const uid = authRequests.getCurrentUid();
     tugRequests.getTugs(uid)
       .then((tugs) => {
+        console.log(tugs);
         this.setState({ tugs });
       })
       .catch(err => console.error('error in getAllTugs', err));
@@ -58,7 +59,6 @@ class Fleet extends React.Component {
   updateCaptain = (tugId, captain) => {
     tugRequests.patchCaptain(tugId, captain)
       .then(() => {
-        // this.getAllTugs();
       })
       .catch(err => console.error('error in update in edit', err));
   }

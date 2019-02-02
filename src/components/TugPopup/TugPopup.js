@@ -1,0 +1,37 @@
+import React from 'react';
+import tugShape from '../../helpers/propz/tugShape';
+import './TugPopup.scss';
+
+class TugPopup extends React.Component {
+  render() {
+    const { singleTug } = this.props;
+
+    // const basicTug = () => (
+    //   <h4>{singleTug.name}</h4>
+    //   <p>{singleTug.captain}</p>
+    //   <p>{singleTug.speed}</p>
+    // )
+
+    if (singleTug.currentLat === undefined) {
+      return (
+        <div className="Map-Popup">
+          <h4>{singleTug.name}</h4>
+          <p>Captain: {singleTug.captain}</p>
+          <p>Current Port: {singleTug.homeport}</p>
+          <p>Speed: 0 knots</p>
+        </div>
+      );
+    }
+    return (
+        <div className="Map-Popup">
+          <h4>{singleTug.name}</h4>
+          <p>Captain: {singleTug.captain}</p>
+          <p>Previous Port: {singleTug.homeport}</p>
+          <p>Destination: {singleTug.homeport}</p>
+          <p>Speed: {singleTug.speed} knots</p>
+        </div>
+    );
+  }
+}
+
+export default TugPopup;

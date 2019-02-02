@@ -1,7 +1,7 @@
 import React from 'react';
 import Map from '../../Map/Map';
-import tugRequests from '../../../helpers/data/tugRequests';
 import authRequests from '../../../helpers/data/authRequests';
+import smashRequest from '../../../helpers/data/smashRequest';
 import './Locations.scss';
 
 class Locations extends React.Component {
@@ -9,17 +9,18 @@ class Locations extends React.Component {
     tugs: [],
   }
 
-  getAllTugs() {
+  tugsSmash = () => {
     const uid = authRequests.getCurrentUid();
-    tugRequests.getTugs(uid)
-      .then((tugs) => {
-        this.setState({ tugs });
-      })
-      .catch(err => console.error('error in getAllTugs', err));
+    smashRequest.getTugInfo(uid).then((tugs) => {
+      console.log(tugs);
+      this.setState({ tugs });
+    })
+      .catch(err => console.error('error in tugsSmash', err));
   }
 
+
   componentWillMount() {
-    this.getAllTugs();
+    this.tugsSmash();
   }
 
   render() {
@@ -27,7 +28,6 @@ class Locations extends React.Component {
 
     return (
       <div className="Locations">
-        <h3>All tugs will be displayed on map</h3>
         <Map
           tugs={tugs}
         />

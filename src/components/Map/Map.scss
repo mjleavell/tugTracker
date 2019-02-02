@@ -1,4 +1,9 @@
-.leaflet-container {
-  height: 30rem;
-  width: 40rem;
+.Map {
+  margin-top: 1.5rem;
+  display: flex;
+  justify-content: center;
+  .leaflet-container {
+    height: 80vh;
+    width: 90vw;
+  }
 }
