@@ -6,7 +6,7 @@ import {
   Marker,
   Popup,
 } from 'react-leaflet';
-import MapPopup from '../MapPopup/MapPopup';
+import TugPopup from '../TugPopup/TugPopup';
 import './Map.scss';
 
 class Map extends React.Component {
@@ -23,9 +23,7 @@ class Map extends React.Component {
         position={[((tug.currentLat === undefined) ? tug.homeportLat : tug.currentLat), ((tug.currentLon === undefined) ? tug.homeportLon : tug.currentLon)]}
       >
         <Popup>
-          <h4>{tug.name}</h4>
-          <p>{tug.captain}</p>
-          <p>{tug.speed}</p>
+          <TugPopup key={tug.id} singleTug={tug} />
         </Popup>
       </Marker>
     ));
