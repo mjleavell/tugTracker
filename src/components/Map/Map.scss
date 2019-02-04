@@ -1,13 +1,18 @@
 .Map {
-  margin-top: 1.5rem;
+  margin-top: 0.5rem;
   display: flex;
   justify-content: center;
   .leaflet-container {
+    margin-top: 0.5rem;
     height: 80vh;
     width: 90vw;
+    border: 1px solid black;
   }
-  .btn {
-    width: rem;
-    margin-right: 3rem;
+  .row {
+    justify-content: center;
+    margin: 0;
+  }
+  .col {
+    padding: 0;
   }
 }

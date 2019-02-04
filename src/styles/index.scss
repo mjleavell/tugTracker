@@ -1,5 +1,5 @@
-@import './colors';
+@import './colors.scss';
 
 body {
-  background-color: $blue;
+  background-color: rgb(190,212,233) !important;
 }
