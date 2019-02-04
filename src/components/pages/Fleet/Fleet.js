@@ -30,7 +30,6 @@ class Fleet extends React.Component {
     const uid = authRequests.getCurrentUid();
     tugRequests.getTugs(uid)
       .then((tugs) => {
-        console.log(tugs);
         this.setState({ tugs });
       })
       .catch(err => console.error('error in getAllTugs', err));
@@ -78,21 +77,21 @@ class Fleet extends React.Component {
 
     return (
       <div className="Fleet">
-        <Button
-          color="light"
-          size="small"
-          className="add-tug-btn"
-          onClick={this.addTugView}
-        >Add tug</Button>
-        <Button
-          color="light"
-          size="small"
-          className="locations-btn"
-          onClick={this.tugLocationsView}
-        >View all tugs</Button>
-          <div>
-            {tugItemComponents}
-          </div>
+        <div className="fleet-btns">
+          <Button
+            color="light"
+            size="small"
+            className="add-tug-btn"
+            onClick={this.addTugView}
+          >Add tug</Button>
+          <Button
+            color="light"
+            size="small"
+            className="locations-btn"
+            onClick={this.tugLocationsView}
+          >View all tugs</Button>
+        </div>
+        {tugItemComponents}
       </div>
     );
   }

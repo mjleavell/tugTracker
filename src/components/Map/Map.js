@@ -6,16 +6,18 @@ import {
   Marker,
   Popup,
 } from 'react-leaflet';
+import { Button } from 'reactstrap';
 import TugPopup from '../TugPopup/TugPopup';
 import './Map.scss';
 
 class Map extends React.Component {
   static propTypes = {
     tugs: PropTypes.array,
+    fleetView: PropTypes.func,
   }
 
   render() {
-    const { tugs } = this.props;
+    const { tugs, fleetView } = this.props;
 
     const tugMarker = () => tugs.map(tug => (
       <Marker
@@ -30,6 +32,9 @@ class Map extends React.Component {
 
     return (
       <div className="Map">
+        <div>
+          <Button color="secondary" size="sm" onClick={fleetView}>Back</Button>
+        </div>
         <LeafletMap
           center={[35.08533, -90.15833]}
           zoom={6}

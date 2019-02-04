@@ -18,6 +18,10 @@ class Locations extends React.Component {
       .catch(err => console.error('error in tugsSmash', err));
   }
 
+  fleetView = (e) => {
+    e.preventDefault();
+    this.props.history.push('/fleet');
+  };
 
   componentWillMount() {
     this.tugsSmash();
@@ -30,6 +34,7 @@ class Locations extends React.Component {
       <div className="Locations">
         <Map
           tugs={tugs}
+          fleetView={this.fleetView}
         />
       </div>
     );
