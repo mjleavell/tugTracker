@@ -6,16 +6,18 @@ import {
   Marker,
   Popup,
 } from 'react-leaflet';
+import { Button, Row, Col } from 'reactstrap';
 import TugPopup from '../TugPopup/TugPopup';
 import './Map.scss';
 
 class Map extends React.Component {
   static propTypes = {
     tugs: PropTypes.array,
+    fleetView: PropTypes.func,
   }
 
   render() {
-    const { tugs } = this.props;
+    const { tugs, fleetView } = this.props;
 
     const tugMarker = () => tugs.map(tug => (
       <Marker
@@ -30,23 +32,30 @@ class Map extends React.Component {
 
     return (
       <div className="Map">
-        <LeafletMap
-          center={[35.08533, -90.15833]}
-          zoom={6}
-          maxZoom={12}
-          attributionControl={true}
-          zoomControl={true}
-          doubleClickZoom={true}
-          scrollWheelZoom={true}
-          dragging={true}
-          animate={true}
-          easeLinearity={0.35}
-        >
-          <TileLayer
-            url='http://{s}.tile.osm.org/{z}/{x}/{y}.png'
-          />
-          {tugMarker()}
-        </LeafletMap>
+        <Col>
+          <Row>
+            <Button onClick={fleetView}>Back</Button>
+          </Row>
+          <Row>
+            <LeafletMap
+              center={[35.08533, -90.15833]}
+              zoom={6}
+              maxZoom={12}
+              attributionControl={true}
+              zoomControl={true}
+              doubleClickZoom={true}
+              scrollWheelZoom={true}
+              dragging={true}
+              animate={true}
+              easeLinearity={0.35}
+            >
+              <TileLayer
+                url='http://{s}.tile.osm.org/{z}/{x}/{y}.png'
+              />
+              {tugMarker()}
+            </LeafletMap>
+          </Row>
+        </Col>
       </div>
     );
   }

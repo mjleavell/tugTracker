@@ -1,0 +1,9 @@
+.Fleet {
+  .fleet-btns {
+    display: flex;
+    justify-content: center;
+    .btn {
+      margin: 1rem 0.5rem 0.5rem 0.5rem;
+    }
+  }
+}

@@ -10,6 +10,11 @@ class SingleLocation extends React.Component {
     tugs: [],
   }
 
+  fleetView = (e) => {
+    e.preventDefault();
+    this.props.history.push('/fleet');
+  };
+
   getSingleTug = () => {
     const tugId = this.props.match.params.id;
     tugRequests.getSingleTug(tugId).then((singleTug) => {
@@ -52,6 +57,7 @@ class SingleLocation extends React.Component {
       <div className="SingleLocation">
         <Map
           tugs={tugs}
+          fleetView={this.fleetView}
         />
       </div>
     );

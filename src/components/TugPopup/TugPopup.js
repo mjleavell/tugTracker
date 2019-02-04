@@ -1,16 +1,9 @@
 import React from 'react';
-import tugShape from '../../helpers/propz/tugShape';
 import './TugPopup.scss';
 
 class TugPopup extends React.Component {
   render() {
     const { singleTug } = this.props;
-
-    // const basicTug = () => (
-    //   <h4>{singleTug.name}</h4>
-    //   <p>{singleTug.captain}</p>
-    //   <p>{singleTug.speed}</p>
-    // )
 
     if (singleTug.currentLat === undefined) {
       return (
