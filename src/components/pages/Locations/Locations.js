@@ -12,7 +12,6 @@ class Locations extends React.Component {
   tugsSmash = () => {
     const uid = authRequests.getCurrentUid();
     smashRequest.getTugInfo(uid).then((tugs) => {
-      console.log(tugs);
       this.setState({ tugs });
     })
       .catch(err => console.error('error in tugsSmash', err));

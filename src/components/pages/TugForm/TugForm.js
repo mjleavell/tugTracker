@@ -63,8 +63,8 @@ class TugForm extends React.Component {
     const { formSubmitEvent } = this.props;
     const newTug = { ...this.state.newTug };
     newTug.uid = authRequests.getCurrentUid();
-    formSubmitEvent(newTug);
     this.setState({ newTug: defaultTug });
+    formSubmitEvent(newTug);
   }
 
   render() {
@@ -72,7 +72,7 @@ class TugForm extends React.Component {
     return (
       <div className="AddTug">
         <div className="AddTug-form">
-          <Form >
+          <Form onSubmit={this.addNewTug}>
             <FormGroup row>
               <Label for="tug-name">Tug Name</Label>
               <Col sm={8}>
@@ -145,7 +145,7 @@ class TugForm extends React.Component {
               />
               </Col>
             </FormGroup>
-            <Button className="add-tug-btn" onSubmit={this.addNewTug}>Add Tug</Button>
+            <Button className="add-tug-btn" onClick={this.addNewTug}>Add Tug</Button>
           </Form>
         </div>
       </div>

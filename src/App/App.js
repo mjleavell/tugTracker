@@ -10,7 +10,6 @@ import connection from '../helpers/data/connection';
 import MyNavbar from '../components/MyNavbar/MyNavbar';
 import Auth from '../components/pages/Auth/Auth';
 import Fleet from '../components/pages/Fleet/Fleet';
-import TugForm from '../components/pages/TugForm/TugForm';
 import Locations from '../components/pages/Locations/Locations';
 import SingleLocation from '../components/pages/SingleLocation/SingleLocation';
 import './App.scss';

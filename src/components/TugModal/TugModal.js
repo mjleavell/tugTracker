@@ -1,17 +1,15 @@
 import React from 'react';
 import {
-  Button,
   Modal,
   ModalHeader,
   ModalBody,
-  ModalFooter,
 } from 'reactstrap';
 import PropTypes from 'prop-types';
 import './TugModal.scss';
 
 class TugModal extends React.Component {
   static propTypes = {
-    createTugForm: PropTypes.func,
+    createTugForm: PropTypes.object,
   }
 
   modalEvent = () => {
