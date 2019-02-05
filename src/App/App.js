@@ -78,7 +78,6 @@ class App extends React.Component {
             <MyNavbar isAuthed={authed} logoutClickEvent={logoutClickEvent} />
               <Switch>
                 <PrivateRoute path='/' exact component={Fleet} authed={authed} />
-                {/* <PrivateRoute path='/fleet/add' component={TugForm} authed={authed} /> */}
                 <PrivateRoute path='/fleet' component={Fleet} authed={authed} />
                 <PrivateRoute path='/locations/:id' component={SingleLocation} authed={authed} />
                 <PrivateRoute path='/locations' component={Locations} authed={authed} />

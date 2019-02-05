@@ -18,11 +18,6 @@ class Fleet extends React.Component {
     this.setState({ modal: !modal });
   }
 
-  // addTugView = (e) => {
-  //   e.preventDefault();
-  //   this.props.history.push('/fleet/add');
-  // };
-
   tugLocationsView = (e) => {
     e.preventDefault();
     this.props.history.push('/locations');
