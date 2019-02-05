@@ -4,16 +4,19 @@ import './Fleet.scss';
 import TugItem from '../../TugItem/TugItem';
 import authRequests from '../../../helpers/data/authRequests';
 import tugRequests from '../../../helpers/data/tugRequests';
+import TugModal from '../../TugModal/TugModal';
+import TugForm from '../TugForm/TugForm';
 
 class Fleet extends React.Component {
   state = {
     tugs: [],
+    modal: false,
   }
 
-  addTugView = (e) => {
-    e.preventDefault();
-    this.props.history.push('/fleet/add');
-  };
+  toggleModal = () => {
+    const { modal } = this.state;
+    this.setState({ modal: !modal });
+  }
 
   tugLocationsView = (e) => {
     e.preventDefault();
@@ -62,8 +65,17 @@ class Fleet extends React.Component {
       .catch(err => console.error('error in update in edit', err));
   }
 
+  formSubmitEvent = (newTug) => {
+    tugRequests.addTug(newTug)
+      .then(() => {
+        this.getAllTugs();
+        this.setState({ modal: false });
+      })
+      .catch(err => console.error('error with adding new tug', err));
+  }
+
   render() {
-    const { tugs } = this.state;
+    const { tugs, modal } = this.state;
     const tugItemComponents = tugs.map(tug => (
       <TugItem
         tugs={tug}
@@ -75,6 +87,12 @@ class Fleet extends React.Component {
       />
     ));
 
+    const createTugForm = () => (
+      <TugForm
+        formSubmitEvent={this.formSubmitEvent}
+      />
+    );
+
     return (
       <div className="Fleet">
         <div className="fleet-btns">
@@ -82,7 +100,7 @@ class Fleet extends React.Component {
             color="light"
             size="small"
             className="add-tug-btn"
-            onClick={this.addTugView}
+            onClick={this.toggleModal}
           >Add tug</Button>
           <Button
             color="light"
@@ -92,6 +110,12 @@ class Fleet extends React.Component {
           >View all tugs</Button>
         </div>
         {tugItemComponents}
+        <TugModal
+          formSubmitEvent={this.formSubmitEvent}
+          modal={modal}
+          toggleModal={this.toggleModal}
+          createTugForm={createTugForm()}
+        />
       </div>
     );
   }

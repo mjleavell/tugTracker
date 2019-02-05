@@ -14,8 +14,8 @@
       "name": "Neely Leavell",
       "mmsi": 367517790,
       "homeport": "Greenville, MS",
-      "homeportLat": 33.36191,
-      "homeportLon": -91.11597,
+      "homeportLat": 33.361353,
+      "homeportLon": -91.116516,
       "captain": "Jonathan Bankhead",
       "inEdit": false,
       "uid": "vJtxX2DnrEWTCphcqj3cHUVyyip2"
@@ -24,8 +24,8 @@
       "name": "Lee Leavell",
       "mmsi": 367575120,
       "homeport": "Memphis, TN",
-      "homeportLat": 35.08533,
-      "homeportLon": -90.15833,
+      "homeportLat": 35.08535,
+      "homeportLon": -90.15835,
       "captain": "Jacob Banet",
       "inEdit": false,
       "uid": "vJtxX2DnrEWTCphcqj3cHUVyyip2"
@@ -114,8 +114,8 @@
       "name": "Joy Glynn",
       "mmsi": 368039240,
       "homeport": "Memphis, TN",
-      "homeportLat": 35.08533,
-      "homeportLon": -90.15833,
+      "homeportLat": 35.085306,
+      "homeportLon": -90.160056, 
       "captain": "Jacob Banet",
       "inEdit": false,
       "uid": "vJtxX2DnrEWTCphcqj3cHUVyyip2"
@@ -124,8 +124,8 @@
       "name": "Mary Wepfer",
       "mmsi": 367517760,
       "homeport": "Memphis, TN",
-      "homeportLat": 35.08533,
-      "homeportLon": -90.15833,
+      "homeportLat": 35.085534,
+      "homeportLon": -90.159525,
       "captain": "Charlie Smith",
       "inEdit": false,
       "uid": "vJtxX2DnrEWTCphcqj3cHUVyyip2"
