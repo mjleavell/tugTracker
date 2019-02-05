@@ -21,7 +21,7 @@ class TugPopup extends React.Component {
           <p>Captain: {singleTug.captain}</p>
           <p>Previous Port: {singleTug.homeport}</p>
           <p>Destination: {singleTug.homeport}</p>
-          <p>Speed: {singleTug.speed} knots</p>
+          <p>Speed: {(singleTug.speed) / 10} knots</p>
         </div>
     );
   }
