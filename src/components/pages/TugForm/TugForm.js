@@ -1,13 +1,15 @@
+/* eslint-disable max-len */
 import React from 'react';
 import {
   Button,
+  Label,
+  Col,
+  Input,
   Form,
   FormGroup,
-  Label,
-  Input,
-  Col,
+  ModalFooter,
 } from 'reactstrap';
-import tugRequests from '../../../helpers/data/tugRequests';
+import PropTypes from 'prop-types';
 import authRequests from '../../../helpers/data/authRequests';
 
 import './TugForm.scss';
@@ -24,6 +26,10 @@ const defaultTug = {
 };
 
 class TugForm extends React.Component {
+  static propTypes = {
+    formSubmitEvent: PropTypes.func,
+  }
+
   state = {
     newTug: defaultTug,
   }
@@ -53,19 +59,12 @@ class TugForm extends React.Component {
 
   captainChange = e => this.formFieldStringState('captain', e);
 
-  addNewTug = (newTug) => {
-    tugRequests.addTug(newTug)
-      .then(() => {
-        this.props.history.push('/fleet');
-      })
-      .catch(err => console.error('error with adding new tug', err));
-  }
-
-  formSubmit = (e) => {
+  addNewTug = (e) => {
     e.preventDefault();
+    const { formSubmitEvent } = this.props;
     const newTug = { ...this.state.newTug };
     newTug.uid = authRequests.getCurrentUid();
-    this.addNewTug(newTug);
+    formSubmitEvent(newTug);
     this.setState({ newTug: defaultTug });
   }
 
@@ -73,82 +72,83 @@ class TugForm extends React.Component {
     const { newTug } = this.state;
     return (
       <div className="AddTug">
-        <h3>Add Tug to Fleet</h3>
         <div className="AddTug-form">
-          <Form onSubmit={this.formSubmit}>
+          <Form onSubmit={this.formSubmitEvent}>
             <FormGroup row>
               <Label for="tug-name">Tug Name</Label>
-              <Col sm={10}>
-                <Input
-                  type="text"
-                  id="tug-name"
-                  placeholder="Enter name of tug"
-                  value={newTug.name}
-                  onChange={this.nameChange}
-                />
+              <Col sm={8}>
+              <Input
+                type="text"
+                id="tug-name"
+                placeholder="Enter name of tug"
+                value={newTug.name}
+                onChange={this.nameChange}
+              />
               </Col>
             </FormGroup>
             <FormGroup row>
               <Label for="tug-mmsi">Tug MMSI</Label>
-              <Col sm={10}>
-                <Input
-                  type="text"
-                  id="tug-mmsi"
-                  placeholder="Enter mmsi"
-                  value={newTug.mmsi}
-                  onChange={this.mmsiChange}
-                />
+              <Col sm={8}>
+              <Input
+                type="text"
+                id="tug-mmsi"
+                placeholder="Enter mmsi"
+                value={newTug.mmsi}
+                onChange={this.mmsiChange}
+              />
               </Col>
             </FormGroup>
             <FormGroup row>
               <Label for="tug-homeport">Home Port</Label>
-              <Col sm={10}>
-                <Input
-                  type="text"
-                  id="tug-homeport"
-                  placeholder="Enter home port"
-                  value={newTug.homeport}
-                  onChange={this.homeportChange}
-                />
+              <Col sm={8}>
+              <Input
+                type="text"
+                id="tug-homeport"
+                placeholder="Enter home port"
+                value={newTug.homeport}
+                onChange={this.homeportChange}
+              />
               </Col>
             </FormGroup>
             <FormGroup row>
               <Label for="tug-homeport-lat">Latitude</Label>
-              <Col sm={10}>
-                <Input
-                  type="text"
-                  id="tug-homeport-lat"
-                  placeholder="Enter home port latitude"
-                  value={newTug.homeportLat}
-                  onChange={this.homeportChangeLat}
-                />
+              <Col sm={8}>
+              <Input
+                type="text"
+                id="tug-homeport-lat"
+                placeholder="Enter home port latitude"
+                value={newTug.homeportLat}
+                onChange={this.homeportChangeLat}
+              />
               </Col>
             </FormGroup>
             <FormGroup row>
               <Label for="tug-homeport-lon">Longitude</Label>
-              <Col sm={10}>
-                <Input
-                  type="text"
-                  id="tug-homeport-lon"
-                  placeholder="Enter home port longitude"
-                  value={newTug.homeportLon}
-                  onChange={this.homeportChangeLon}
-                />
+              <Col sm={8}>
+              <Input
+                type="text"
+                id="tug-homeport-lon"
+                placeholder="Enter home port longitude"
+                value={newTug.homeportLon}
+                onChange={this.homeportChangeLon}
+              />
               </Col>
             </FormGroup>
             <FormGroup row>
               <Label for="tug-Captain">Captain</Label>
-              <Col sm={10}>
-                <Input
-                  type="text"
-                  id="tug-captain"
-                  placeholder="Enter captain"
-                  value={newTug.captain}
-                  onChange={this.captainChange}
-                />
+              <Col sm={8}>
+              <Input
+                type="text"
+                id="tug-captain"
+                placeholder="Enter captain"
+                value={newTug.captain}
+                onChange={this.captainChange}
+              />
               </Col>
             </FormGroup>
-            <Button>Add Tug</Button>
+            <ModalFooter>
+              <Button className="add-tug-btn">Add Tug</Button>
+            </ModalFooter>
           </Form>
         </div>
       </div>
