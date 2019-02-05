@@ -73,7 +73,8 @@ class Fleet extends React.Component {
   formSubmitEvent = (newTug) => {
     tugRequests.addTug(newTug)
       .then(() => {
-        this.props.history.push('/fleet');
+        this.getAllTugs();
+        this.setState({ modal: false });
       })
       .catch(err => console.error('error with adding new tug', err));
   }

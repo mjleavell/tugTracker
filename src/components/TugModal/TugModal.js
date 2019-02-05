@@ -25,7 +25,7 @@ class TugModal extends React.Component {
       <div className='TugModal container mt-4 mb-4 w-95'>
           <Modal isOpen={modal} toggle={this.modalEvent} className="Modal">
             <ModalHeader toggle={this.modalEvent}>Add New Tug</ModalHeader>
-            <ModalBody>
+            <ModalBody id="ModalBody">
               {createTugForm}
             </ModalBody>
           </Modal>

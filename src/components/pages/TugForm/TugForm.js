@@ -7,7 +7,6 @@ import {
   Input,
   Form,
   FormGroup,
-  ModalFooter,
 } from 'reactstrap';
 import PropTypes from 'prop-types';
 import authRequests from '../../../helpers/data/authRequests';
@@ -73,7 +72,7 @@ class TugForm extends React.Component {
     return (
       <div className="AddTug">
         <div className="AddTug-form">
-          <Form onSubmit={this.formSubmitEvent}>
+          <Form >
             <FormGroup row>
               <Label for="tug-name">Tug Name</Label>
               <Col sm={8}>
@@ -146,9 +145,7 @@ class TugForm extends React.Component {
               />
               </Col>
             </FormGroup>
-            <ModalFooter>
-              <Button className="add-tug-btn">Add Tug</Button>
-            </ModalFooter>
+            <Button className="add-tug-btn" onSubmit={this.addNewTug}>Add Tug</Button>
           </Form>
         </div>
       </div>
