@@ -19,7 +19,7 @@ class TugPopup extends React.Component {
         <div className="Map-Popup">
           <h4>{singleTug.name}</h4>
           <p>Captain: {singleTug.captain}</p>
-          <p>Destination: {singleTug.lastPort}</p>
+          <p>Previous Port: {singleTug.lastPort}</p>
           <p>Destination: {singleTug.nextPort}</p>
           <p>Speed: {(singleTug.speed) / 10} knots</p>
         </div>
