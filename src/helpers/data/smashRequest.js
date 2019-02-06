@@ -13,7 +13,6 @@ const getTugInfo = uid => new Promise((resolve, reject) => {
         const updatedTug = { ...singleTug };
         if (tugInfo.length !== 0) {
           tugInfo.forEach((item) => {
-            console.log(item);
             updatedTug.currentLat = parseFloat(item[1]);
             updatedTug.currentLon = parseFloat(item[2]);
             updatedTug.speed = parseFloat(item[3]);
