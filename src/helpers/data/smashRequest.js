@@ -11,7 +11,10 @@ const getTugInfo = uid => new Promise((resolve, reject) => {
     tugs.forEach((singleTug) => {
       marineTrafficRequests.getTugExtended(singleTug.mmsi).then((tugInfo) => {
         const updatedTug = { ...singleTug };
-        if (tugInfo.length !== 0) {
+        if (tugInfo.errors.length === 1) { // if api runs out, home port is pushed
+          allTugs.push(singleTug);
+          tugCounter += 1;
+        } else if (tugInfo.length !== 0) {
           console.log(tugInfo);
           tugInfo.forEach((item) => {
             updatedTug.currentLat = parseFloat(item[1]);
