@@ -1,3 +1,9 @@
+@import '~react-leaflet-markercluster/dist/styles.min.css';
+
+#LeafletMap {
+  border-radius: 8px;
+}
+
 .Map {
   margin-top: 0.5rem;
   display: flex;

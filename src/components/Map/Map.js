@@ -6,9 +6,13 @@ import {
   Marker,
   Popup,
 } from 'react-leaflet';
+import MarkerClusterGroup from 'react-leaflet-markercluster';
+import L from 'leaflet';
 import { Button, Row, Col } from 'reactstrap';
 import TugPopup from '../TugPopup/TugPopup';
+
 import './Map.scss';
+import 'react-leaflet-markercluster/dist/styles.min.css';
 
 class Map extends React.Component {
   static propTypes = {
@@ -19,7 +23,7 @@ class Map extends React.Component {
   render() {
     const { tugs, fleetView } = this.props;
 
-    const tugMarker = () => tugs.map(tug => (
+    const tugMarker = tugs.map(tug => (
       <Marker
         key={tug.id}
         position={[((tug.currentLat === undefined) ? tug.homeportLat : tug.currentLat), ((tug.currentLon === undefined) ? tug.homeportLon : tug.currentLon)]}
@@ -48,11 +52,17 @@ class Map extends React.Component {
               dragging={true}
               animate={true}
               easeLinearity={0.35}
+              id="LeafletMap"
             >
               <TileLayer
-                url='http://{s}.tile.osm.org/{z}/{x}/{y}.png'
+                url='https://{s}.tile.openstreetmap.se/hydda/full/{z}/{x}/{y}.png'
               />
-              {tugMarker()}
+              <MarkerClusterGroup
+                showCoverageOnHover={false}
+                spiderfyDistanceMultiplier={2}
+              >
+                {tugMarker}
+              </MarkerClusterGroup>
             </LeafletMap>
           </Row>
         </Col>
