@@ -12,6 +12,7 @@ const getTugInfo = uid => new Promise((resolve, reject) => {
       marineTrafficRequests.getTugExtended(singleTug.mmsi).then((tugInfo) => {
         const updatedTug = { ...singleTug };
         if (tugInfo.length !== 0) {
+          console.log(tugInfo);
           tugInfo.forEach((item) => {
             updatedTug.currentLat = parseFloat(item[1]);
             updatedTug.currentLon = parseFloat(item[2]);
