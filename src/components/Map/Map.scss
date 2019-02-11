@@ -12,10 +12,17 @@
     background-color: #fff;
     color: #343a40;
   }
+  #map-refresh-btn {
+    position: absolute;
+    top: 7rem;
+    z-index: 1000;
+    margin-left: 10px;
+    background-color: #fff;
+    color: #343a40;
+  }
   .leaflet-container {
-    height: 100vh;
+    height: 92vh;
     width: 100vw;
-    border: 1px solid black;
   }
   .row {
     justify-content: center;
