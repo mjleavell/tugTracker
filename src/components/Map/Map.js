@@ -36,28 +36,27 @@ class Map extends React.Component {
 
     return (
       <div className="Map">
-        <Col>
-          <Row>
+        {/* <Col> */}
+          {/* <Row>
             <Button onClick={fleetView}>Back</Button>
           </Row>
-          <Row>
+          <Row> */}
             <LeafletMap
-              center={[35.08533, -90.15833]}
+              center={[35.08535, -90.15835]}
               zoom={6}
               maxZoom={20}
               attributionControl={true}
               zoomControl={true}
               doubleClickZoom={true}
               scrollWheelZoom={true}
-              flyTo={true}
-              fitBounds={true}
               dragging={true}
               animate={true}
               easeLinearity={0.35}
               id="LeafletMap"
             >
+              <Button outline className='leaflet-bar' size="sm" onClick={fleetView} id='map-back-btn'><i className="fas fa-arrow-left"></i></Button>
               <TileLayer
-                url='https://{s}.tile.openstreetmap.se/hydda/full/{z}/{x}/{y}.png'
+                url='https://maps.wikimedia.org/osm-intl/{z}/{x}/{y}{r}.png'
               />
               <MarkerClusterGroup
                 showCoverageOnHover={false}
@@ -66,8 +65,8 @@ class Map extends React.Component {
                 {tugMarker}
               </MarkerClusterGroup>
             </LeafletMap>
-          </Row>
-        </Col>
+          {/* </Row> */}
+        {/* </Col> */}
       </div>
     );
   }
