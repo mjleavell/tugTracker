@@ -6,10 +6,10 @@ import {
   Marker,
   Popup,
 } from 'react-leaflet';
-import L from 'leaflet';
 import MarkerClusterGroup from 'react-leaflet-markercluster';
-// import Control from 'react-leaflet-control';
-import { Button, Row, Col } from 'reactstrap';
+// import { Button, Row, Col } from 'reactstrap';
+import MenuItem from '@material-ui/core/MenuItem';
+import MenuList from '@material-ui/core/MenuList';
 import TugPopup from '../TugPopup/TugPopup';
 
 import './Map.scss';
@@ -64,17 +64,6 @@ class Map extends React.Component {
           easeLinearity={0.35}
           id="LeafletMap"
         >
-          {/* <Control position='topright'>
-            <Button outline
-              size="sm"
-              id='map-auto-btn'
-              onClick={() => flyTo([35.08533, -90.15833], 6)}
-            >
-              <i className='fas fa-sync-alt'></i>
-            </Button>
-          </Control> */}
-          <Button outline className='leaflet-bar' size="sm" onClick={fleetView} id='map-back-btn'><i className="fas fa-arrow-left"></i></Button>
-          <Button outline className='leaflet-bar' size="sm" onClick={this.flyToLocation} id='map-refresh-btn'><i className="fas fa-sync-alt"></i></Button>
           <TileLayer
             url='https://maps.wikimedia.org/osm-intl/{z}/{x}/{y}{r}.png'
             attribution='<a href="https://wikimediafoundation.org/wiki/Maps_Terms_of_Use">Wikimedia</a>'
@@ -86,11 +75,11 @@ class Map extends React.Component {
           >
             {tugMarker}
           </MarkerClusterGroup>
-          {/* {controlButtons} */}
-
+          <MenuList id='map-menu-list' className='leaflet-control-zoom leaflet-bar leaflet-control'>
+            <MenuItem id='map-menu-back' onClick={fleetView}><i className="fas fa-arrow-left"></i></MenuItem>
+            <MenuItem id='map-menu-refresh' onClick={this.flyToLocation}><i className="fas fa-sync-alt"></i></MenuItem>
+          </MenuList>
         </LeafletMap>
-        {/* </Row> */}
-        {/* </Col> */}
       </div>
     );
   }
