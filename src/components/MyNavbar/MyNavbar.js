@@ -10,6 +10,7 @@ import {
   NavLink,
 } from 'reactstrap';
 import './MyNavbar.scss';
+import tugImg from './tug2.png';
 
 class MyNavbar extends React.Component {
   static propTypes = {
@@ -45,7 +46,7 @@ class MyNavbar extends React.Component {
     return (
       <div className="My-Navbar">
         <Navbar color="dark" dark expand="md" id="my-navbar">
-          <NavbarBrand href="/fleet">TugTracker</NavbarBrand>
+          <NavbarBrand href="/fleet"><img src={tugImg}></img> Tug Tracker</NavbarBrand>
           <NavbarToggler onClick={e => this.toggle(e)} />
           <Collapse isOpen={this.state.isOpen} navbar>
             {buildNavbar()}
