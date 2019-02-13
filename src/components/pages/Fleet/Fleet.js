@@ -100,7 +100,6 @@ class Fleet extends React.Component {
                 <Button
                   className="mr-auto"
                   color="link"
-                  size="small"
                   id="add-tug-btn"
                   onClick={this.toggleModal}
                 ><i className="fas fa-plus fa-2x"></i></Button></th>

@@ -8,8 +8,11 @@
     overflow: hidden;
   }
     .btn {
-      margin: 0 5px 0 5px;
-      background-color: rgb(97,137,185);
-      border: rgb(97,137,185) 1px solid;
+      margin: 0 3px 0 3px;
+      color: rgb(97,137,185);
+  }
+  .btn:hover {
+    color: rgb(190,212,233);
+    text-decoration-style: none;
   }
 }

@@ -36,22 +36,22 @@ class MyNavbar extends React.Component {
       if (isAuthed) {
         return (
           <Nav className='ml-auto' navbar>
-            <NavItem>
+            <NavItem className='p-0'>
               <NavLink
                 tag={RRNavLink}
                 to="/locations"
                 color="light"
                 size="small"
-                className="locations-btn"
+                id="locations-btn"
                 onClick={this.tugLocationsView}
-              >Map</NavLink>
+              ><i className="fas fa-map-marker-alt"></i> Map</NavLink>
             </NavItem>
-            <NavItem>
+            <NavItem className='p-0'>
               <NavLink
                 tag={RRNavLink}
                 to="/auth"
                 onClick={logoutClickEvent}
-              >Logout</NavLink>
+              ><i className="fas fa-sign-out-alt"></i> Logout</NavLink>
             </NavItem>
           </Nav >
         );

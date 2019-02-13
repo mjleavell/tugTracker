@@ -34,8 +34,10 @@ class TugItem extends React.Component {
 
   inEditTrue = (e) => {
     e.preventDefault();
-    const { updateInEdit, tugs } = this.props;
-    updateInEdit(tugs.id, true);
+    console.log(e.target.closest('button').id);
+    const tugId = e.target.closest('button').id;
+    const { updateInEdit } = this.props;
+    updateInEdit(tugId, true);
   }
 
   // gets the value from input
@@ -64,11 +66,11 @@ class TugItem extends React.Component {
       <tr className="Tug-Item">
         <td>{tugs.name}</td>
         <td>{tugs.homeport}</td>
-        <td>{tugs.captain}</td>
+        <td>{displayCaptain}</td>
         <td>
-          <Button id={tugs.id} onClick={this.inEditTrue} size="sm" color="dark"><i className="fas fa-edit"></i></Button>
-          <Button size="sm" onClick={this.deleteTug}><i className="fas fa-trash-alt"></i></Button>
-          <Button id={tugs.id} onClick={singleLocationView} color="dark" size="sm"><i className="fas fa-map-marked-alt"></i></Button>
+          <Button id={tugs.id} onClick={this.inEditTrue} color="link"><i className="fas fa-edit"></i></Button>
+          <Button color="link" onClick={this.deleteTug}><i className="fas fa-trash-alt"></i></Button>
+          <Button id={tugs.id} onClick={singleLocationView} color="link"><i className="fas fa-map-marker-alt"></i></Button>
         </td>
       </tr>
     );
