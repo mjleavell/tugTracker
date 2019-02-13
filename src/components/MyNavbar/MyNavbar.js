@@ -9,8 +9,10 @@ import {
   NavItem,
   NavLink,
 } from 'reactstrap';
+import { NavLink as RRNavLink } from 'react-router-dom';
 import './MyNavbar.scss';
 import tugImg from './tug2.png';
+
 
 class MyNavbar extends React.Component {
   static propTypes = {
@@ -35,9 +37,23 @@ class MyNavbar extends React.Component {
         return (
           <Nav className='ml-auto' navbar>
             <NavItem>
-              <NavLink onClick={logoutClickEvent}>Logout</NavLink>
+              <NavLink
+                tag={RRNavLink}
+                to="/locations"
+                color="light"
+                size="small"
+                className="locations-btn"
+                onClick={this.tugLocationsView}
+              >Map</NavLink>
             </NavItem>
-          </Nav>
+            <NavItem>
+              <NavLink
+                tag={RRNavLink}
+                to="/auth"
+                onClick={logoutClickEvent}
+              >Logout</NavLink>
+            </NavItem>
+          </Nav >
         );
       }
       return <Nav className='ml-auto' navbar />;
@@ -46,7 +62,7 @@ class MyNavbar extends React.Component {
     return (
       <div className="My-Navbar">
         <Navbar color="dark" dark expand="md" id="my-navbar">
-          <NavbarBrand href="/fleet"><img src={tugImg}></img> Tug Tracker</NavbarBrand>
+          <NavbarBrand href="/fleet"><img src={tugImg} alt="tug-icon"></img> Tug Tracker</NavbarBrand>
           <NavbarToggler onClick={e => this.toggle(e)} />
           <Collapse isOpen={this.state.isOpen} navbar>
             {buildNavbar()}

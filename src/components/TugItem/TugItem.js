@@ -67,7 +67,7 @@ class TugItem extends React.Component {
         <td>{tugs.captain}</td>
         <td>
           <Button id={tugs.id} onClick={this.inEditTrue} size="sm" color="dark"><i className="fas fa-edit"></i></Button>
-          <Button size="sm" onClick={this.deleteTug} color="dark"><i className="fas fa-trash-alt"></i></Button>
+          <Button size="sm" onClick={this.deleteTug}><i className="fas fa-trash-alt"></i></Button>
           <Button id={tugs.id} onClick={singleLocationView} color="dark" size="sm"><i className="fas fa-map-marked-alt"></i></Button>
         </td>
       </tr>
