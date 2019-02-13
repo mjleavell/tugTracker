@@ -1,5 +1,5 @@
 import React from 'react';
-import { Button } from 'reactstrap';
+import { Button, Table } from 'reactstrap';
 import './Fleet.scss';
 import TugItem from '../../TugItem/TugItem';
 import authRequests from '../../../helpers/data/authRequests';
@@ -109,7 +109,19 @@ class Fleet extends React.Component {
             onClick={this.tugLocationsView}
           >View all tugs</Button>
         </div>
-        {tugItemComponents}
+        <Table hover>
+          <thead>
+            <tr>
+              <th>Tug Name</th>
+              <th>Home Port</th>
+              <th>Captain Name</th>
+              <th></th>
+            </tr>
+          </thead>
+          <tbody>
+            {tugItemComponents}
+          </tbody>
+        </Table>
         <TugModal
           formSubmitEvent={this.formSubmitEvent}
           modal={modal}

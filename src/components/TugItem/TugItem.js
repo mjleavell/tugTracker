@@ -61,20 +61,16 @@ class TugItem extends React.Component {
     const displayCaptain = tugs.inEdit ? <Form onSubmit={this.updateCaptainText} ><Input className="captain-input" value={this.state.newCaptain} onChange={this.handleCaptainChange} type="text" placeholder={tugs.captain} /></Form> : tugs.captain;
 
     return (
-      <div className="tug-item">
-        <Card color="light">
-          <Row>
-            <Col xs="3">{tugs.name}</Col>
-            <Col xs="3">{tugs.homeport}</Col>
-            <Col xs="3">{displayCaptain}</Col>
-            <Col xs="3" className="btn-img">
-              <Button id={tugs.id} onClick={this.inEditTrue} size="sm" color="dark"><i className="fas fa-edit"></i></Button>
-              <Button size="sm" onClick={this.deleteTug} color="dark"><i className="fas fa-trash-alt"></i></Button>
-              <Button id={tugs.id} onClick={singleLocationView} color="dark" size="sm"><i className="fas fa-map-marked-alt"></i></Button>
-            </Col>
-          </Row>
-        </Card>
-      </div>
+      <tr className="Tug-Item">
+        <td>{tugs.name}</td>
+        <td>{tugs.homeport}</td>
+        <td>{tugs.captain}</td>
+        <td>
+          <Button id={tugs.id} onClick={this.inEditTrue} size="sm" color="dark"><i className="fas fa-edit"></i></Button>
+          <Button size="sm" onClick={this.deleteTug} color="dark"><i className="fas fa-trash-alt"></i></Button>
+          <Button id={tugs.id} onClick={singleLocationView} color="dark" size="sm"><i className="fas fa-map-marked-alt"></i></Button>
+        </td>
+      </tr>
     );
   }
 }
