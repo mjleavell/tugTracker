@@ -9,7 +9,12 @@ import {
   NavItem,
   NavLink,
 } from 'reactstrap';
+import { NavLink as RRNavLink } from 'react-router-dom';
+import MapIcon from '@material-ui/icons/Place';
+import LogoutIcon from '@material-ui/icons/ExitToApp';
 import './MyNavbar.scss';
+import tugImg from './tug2.png';
+
 
 class MyNavbar extends React.Component {
   static propTypes = {
@@ -33,10 +38,30 @@ class MyNavbar extends React.Component {
       if (isAuthed) {
         return (
           <Nav className='ml-auto' navbar>
-            <NavItem>
-              <NavLink onClick={logoutClickEvent}>Logout</NavLink>
+            <NavItem className='p-0'>
+              <NavLink
+                tag={RRNavLink}
+                to="/locations"
+                color="light"
+                size="small"
+                id="locations-btn"
+                onClick={this.tugLocationsView}
+              >
+                <MapIcon />
+                Map
+              </NavLink>
             </NavItem>
-          </Nav>
+            <NavItem className='p-0'>
+              <NavLink
+                tag={RRNavLink}
+                to="/auth"
+                onClick={logoutClickEvent}
+              >
+                <LogoutIcon />
+                Logout
+              </NavLink>
+            </NavItem>
+          </Nav >
         );
       }
       return <Nav className='ml-auto' navbar />;
@@ -45,7 +70,7 @@ class MyNavbar extends React.Component {
     return (
       <div className="My-Navbar">
         <Navbar color="dark" dark expand="md" id="my-navbar">
-          <NavbarBrand href="/fleet">TugTracker</NavbarBrand>
+          <NavbarBrand href="/fleet"><img src={tugImg} alt="tug-icon"></img> Tug Tracker</NavbarBrand>
           <NavbarToggler onClick={e => this.toggle(e)} />
           <Collapse isOpen={this.state.isOpen} navbar>
             {buildNavbar()}

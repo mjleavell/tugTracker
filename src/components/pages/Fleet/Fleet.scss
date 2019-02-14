@@ -1,9 +1,32 @@
 .Fleet {
-  .fleet-btns {
-    display: flex;
-    justify-content: center;
-    .btn {
-      margin: 1rem 0.5rem 0.5rem 0.5rem;
+  font-family: 'Roboto Slab', sans-serif;
+  margin-top: 2rem;
+  .table {
+    width: 80vw;
+    margin: 1rem auto 1rem auto;
+    background-color: rgb(97,137,185);
+    color: white;
+    border-radius: 4px;
+    thead th {
+      border-bottom: none;
     }
+    td {
+      vertical-align: 0;
+    }
+    #table-btn {
+      padding: 0.1rem 0.4rem 0.1rem 0.15rem;
+      display: flex;
+      justify-content: flex-end;
+      #add-tug-btn {
+        color: rgb(0,40,94);
+        height: 2rem;
+      }
+      #add-tug-btn:hover {
+        color: rgb(190,212,233);
+        // text-decoration-style: none;
+      }
+    }
+
   }
+
 }

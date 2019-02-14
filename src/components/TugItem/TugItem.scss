@@ -1,19 +1,30 @@
-.tug-item {
-  margin: 0.5rem;
-  display: flex;
-  justify-content: center;
-  align-content: center;
-  .card {
-    width: 50rem;
-    padding: 0.5rem;
-    .btn-img {
-      display: flex;
-      justify-content: flex-end;
-      .btn {
-        margin: auto 5px auto 5px;
-        background-color: rgb(190,212,233);
-        border: rgb(190,212,233) 1px solid;
-      }
-    }
+.Tug-Item {
+  font-family: 'Roboto', sans-serif;
+  tr, td {
+    max-height: 50px;
+  }
+  td {
+    vertical-align: 0;
+  }
+  .overflow-hidden {
+    max-height: 50px;
+    overflow: hidden;
+  }
+  .btn {
+    width: 1rem;
+    margin: 2px;
+    color: rgb(0,40,94);
+    // color: white;
+  }
+
+  .btn:hover {
+    color: white;
+    // background-color: rgb(190,212,233);
+    // text-decoration-style: none;
+  }
+  .tbl-item-btns {
+    display: flex;
+    justify-content: center;
+    align-items: center;
   }
 }

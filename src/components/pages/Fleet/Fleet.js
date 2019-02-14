@@ -1,11 +1,14 @@
+/* eslint-disable arrow-parens */
+/* eslint-disable arrow-body-style */
 import React from 'react';
-import { Button } from 'reactstrap';
+import { Button, Table } from 'reactstrap';
 import './Fleet.scss';
+import AddIcon from '@material-ui/icons/AddCircle';
 import TugItem from '../../TugItem/TugItem';
 import authRequests from '../../../helpers/data/authRequests';
 import tugRequests from '../../../helpers/data/tugRequests';
 import TugModal from '../../TugModal/TugModal';
-import TugForm from '../TugForm/TugForm';
+import TugForm from '../../TugForm/TugForm';
 
 class Fleet extends React.Component {
   state = {
@@ -17,11 +20,6 @@ class Fleet extends React.Component {
     const { modal } = this.state;
     this.setState({ modal: !modal });
   }
-
-  tugLocationsView = (e) => {
-    e.preventDefault();
-    this.props.history.push('/locations');
-  };
 
   singleLocationView = (e) => {
     e.preventDefault();
@@ -76,16 +74,18 @@ class Fleet extends React.Component {
 
   render() {
     const { tugs, modal } = this.state;
-    const tugItemComponents = tugs.map(tug => (
-      <TugItem
-        tugs={tug}
-        key={tug.id}
-        singleLocationView={this.singleLocationView}
-        deleteSingleTug={this.deleteSingleTug}
-        updateInEdit={this.updateInEdit}
-        updateCaptain={this.updateCaptain}
-      />
-    ));
+    const tugItemComponents = tugs.map(tug => {
+      return (
+        <TugItem
+          tugs={tug}
+          key={tug.id}
+          singleLocationView={this.singleLocationView}
+          deleteSingleTug={this.deleteSingleTug}
+          updateInEdit={this.updateInEdit}
+          updateCaptain={this.updateCaptain}
+        />
+      );
+    });
 
     const createTugForm = () => (
       <TugForm
@@ -95,21 +95,27 @@ class Fleet extends React.Component {
 
     return (
       <div className="Fleet">
-        <div className="fleet-btns">
-          <Button
-            color="light"
-            size="small"
-            className="add-tug-btn"
-            onClick={this.toggleModal}
-          >Add tug</Button>
-          <Button
-            color="light"
-            size="small"
-            className="locations-btn"
-            onClick={this.tugLocationsView}
-          >View all tugs</Button>
-        </div>
-        {tugItemComponents}
+        <Table hover>
+          <thead>
+            <tr>
+              <th>Tug Name</th>
+              <th>Home Port</th>
+              <th>Captain Name</th>
+              <th id="table-btn">
+                <Button
+                  color="link"
+                  id="add-tug-btn"
+                  onClick={this.toggleModal}
+                >
+                  <AddIcon fontSize="medium"/>
+                </Button>
+              </th>
+            </tr>
+          </thead>
+          <tbody>
+            {tugItemComponents}
+          </tbody>
+        </Table>
         <TugModal
           formSubmitEvent={this.formSubmitEvent}
           modal={modal}

@@ -9,8 +9,7 @@ import {
   FormGroup,
 } from 'reactstrap';
 import PropTypes from 'prop-types';
-import authRequests from '../../../helpers/data/authRequests';
-
+import authRequests from '../../helpers/data/authRequests';
 import './TugForm.scss';
 
 const defaultTug = {

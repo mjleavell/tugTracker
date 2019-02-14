@@ -1,14 +1,14 @@
 /* eslint-disable max-len */
 import React from 'react';
 import {
-  Row,
-  Col,
-  Card,
   Button,
   Input,
   Form,
 } from 'reactstrap';
 import PropTypes from 'prop-types';
+import EditIcon from '@material-ui/icons/Edit';
+import DeleteIcon from '@material-ui/icons/Delete';
+import MapIcon from '@material-ui/icons/Place';
 import tugShape from '../../helpers/propz/tugShape';
 import './TugItem.scss';
 
@@ -34,8 +34,9 @@ class TugItem extends React.Component {
 
   inEditTrue = (e) => {
     e.preventDefault();
-    const { updateInEdit, tugs } = this.props;
-    updateInEdit(tugs.id, true);
+    const tugId = e.target.closest('button').id;
+    const { updateInEdit } = this.props;
+    updateInEdit(tugId, true);
   }
 
   // gets the value from input
@@ -57,24 +58,25 @@ class TugItem extends React.Component {
 
   render() {
     const { tugs, singleLocationView } = this.props;
-
     const displayCaptain = tugs.inEdit ? <Form onSubmit={this.updateCaptainText} ><Input className="captain-input" value={this.state.newCaptain} onChange={this.handleCaptainChange} type="text" placeholder={tugs.captain} /></Form> : tugs.captain;
 
     return (
-      <div className="tug-item">
-        <Card color="light">
-          <Row>
-            <Col xs="3">{tugs.name}</Col>
-            <Col xs="3">{tugs.homeport}</Col>
-            <Col xs="3">{displayCaptain}</Col>
-            <Col xs="3" className="btn-img">
-              <Button id={tugs.id} onClick={this.inEditTrue} size="sm" color="dark"><i className="fas fa-edit"></i></Button>
-              <Button size="sm" onClick={this.deleteTug} color="dark"><i className="fas fa-trash-alt"></i></Button>
-              <Button id={tugs.id} onClick={singleLocationView} color="dark" size="sm"><i className="fas fa-map-marked-alt"></i></Button>
-            </Col>
-          </Row>
-        </Card>
-      </div>
+      <tr className="Tug-Item">
+        <td>{tugs.name}</td>
+        <td>{tugs.homeport}</td>
+        <td>{displayCaptain}</td>
+        <td className="tbl-item-btns">
+          <Button id={tugs.id} onClick={this.inEditTrue} color="link">
+            <EditIcon />
+          </Button>
+          <Button color="link" onClick={this.deleteTug}>
+            <DeleteIcon />
+          </Button>
+          <Button id={tugs.id} onClick={singleLocationView} color="link">
+            <MapIcon />
+          </Button>
+        </td>
+      </tr>
     );
   }
 }
