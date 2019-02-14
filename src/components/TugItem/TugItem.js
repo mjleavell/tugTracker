@@ -1,9 +1,6 @@
 /* eslint-disable max-len */
 import React from 'react';
 import {
-  Row,
-  Col,
-  Card,
   Button,
   Input,
   Form,
@@ -68,7 +65,7 @@ class TugItem extends React.Component {
         <td>{tugs.name}</td>
         <td>{tugs.homeport}</td>
         <td>{displayCaptain}</td>
-        <td>
+        <td className="tbl-item-btns">
           <Button id={tugs.id} onClick={this.inEditTrue} color="link">
             <EditIcon />
           </Button>
