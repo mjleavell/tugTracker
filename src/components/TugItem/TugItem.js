@@ -9,6 +9,9 @@ import {
   Form,
 } from 'reactstrap';
 import PropTypes from 'prop-types';
+import EditIcon from '@material-ui/icons/Edit';
+import DeleteIcon from '@material-ui/icons/Delete';
+import MapIcon from '@material-ui/icons/Place';
 import tugShape from '../../helpers/propz/tugShape';
 import './TugItem.scss';
 
@@ -34,7 +37,6 @@ class TugItem extends React.Component {
 
   inEditTrue = (e) => {
     e.preventDefault();
-    console.log(e.target.closest('button').id);
     const tugId = e.target.closest('button').id;
     const { updateInEdit } = this.props;
     updateInEdit(tugId, true);
@@ -59,7 +61,6 @@ class TugItem extends React.Component {
 
   render() {
     const { tugs, singleLocationView } = this.props;
-
     const displayCaptain = tugs.inEdit ? <Form onSubmit={this.updateCaptainText} ><Input className="captain-input" value={this.state.newCaptain} onChange={this.handleCaptainChange} type="text" placeholder={tugs.captain} /></Form> : tugs.captain;
 
     return (
@@ -68,9 +69,15 @@ class TugItem extends React.Component {
         <td>{tugs.homeport}</td>
         <td>{displayCaptain}</td>
         <td>
-          <Button id={tugs.id} onClick={this.inEditTrue} color="link"><i className="fas fa-edit"></i></Button>
-          <Button color="link" onClick={this.deleteTug}><i className="fas fa-trash-alt"></i></Button>
-          <Button id={tugs.id} onClick={singleLocationView} color="link"><i className="fas fa-map-marker-alt"></i></Button>
+          <Button id={tugs.id} onClick={this.inEditTrue} color="link">
+            <EditIcon />
+          </Button>
+          <Button color="link" onClick={this.deleteTug}>
+            <DeleteIcon />
+          </Button>
+          <Button id={tugs.id} onClick={singleLocationView} color="link">
+            <MapIcon />
+          </Button>
         </td>
       </tr>
     );

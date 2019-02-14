@@ -1,6 +1,9 @@
+/* eslint-disable arrow-parens */
+/* eslint-disable arrow-body-style */
 import React from 'react';
 import { Button, Table } from 'reactstrap';
 import './Fleet.scss';
+import AddIcon from '@material-ui/icons/AddCircle';
 import TugItem from '../../TugItem/TugItem';
 import authRequests from '../../../helpers/data/authRequests';
 import tugRequests from '../../../helpers/data/tugRequests';
@@ -71,16 +74,18 @@ class Fleet extends React.Component {
 
   render() {
     const { tugs, modal } = this.state;
-    const tugItemComponents = tugs.map(tug => (
-      <TugItem
-        tugs={tug}
-        key={tug.id}
-        singleLocationView={this.singleLocationView}
-        deleteSingleTug={this.deleteSingleTug}
-        updateInEdit={this.updateInEdit}
-        updateCaptain={this.updateCaptain}
-      />
-    ));
+    const tugItemComponents = tugs.map(tug => {
+      return (
+        <TugItem
+          tugs={tug}
+          key={tug.id}
+          singleLocationView={this.singleLocationView}
+          deleteSingleTug={this.deleteSingleTug}
+          updateInEdit={this.updateInEdit}
+          updateCaptain={this.updateCaptain}
+        />
+      );
+    });
 
     const createTugForm = () => (
       <TugForm
@@ -96,13 +101,15 @@ class Fleet extends React.Component {
               <th>Tug Name</th>
               <th>Home Port</th>
               <th>Captain Name</th>
-              <th className="table-btn">
+              <th id="table-btn">
                 <Button
-                  className="mr-auto"
                   color="link"
                   id="add-tug-btn"
                   onClick={this.toggleModal}
-                ><i className="fas fa-plus fa-2x"></i></Button></th>
+                >
+                  <AddIcon fontSize="medium"/>
+                </Button>
+              </th>
             </tr>
           </thead>
           <tbody>

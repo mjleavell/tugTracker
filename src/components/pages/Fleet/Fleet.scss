@@ -7,15 +7,26 @@
     background-color: rgb(0,40,94);
     color: white;
     border-radius: 4px;
-    .table-btn {
-      padding: 2px;
+    thead th {
+      border-bottom: none;
     }
+    td {
+      vertical-align: 0;
+    }
+    #table-btn {
+      padding: 0.1rem 0.4rem 0.1rem 0.15rem;
+      display: flex;
+      justify-content: flex-end;
+      #add-tug-btn {
+        color: rgb(97,137,185);
+        height: 2rem;
+      }
+      #add-tug-btn:hover {
+        color: rgb(190,212,233);
+        // text-decoration-style: none;
+      }
+    }
+
   }
-  #add-tug-btn {
-    color: rgb(97,137,185);
-  }
-  #add-tug-btn:hover {
-    color: rgb(190,212,233);
-    text-decoration-style: none;
-  }
+
 }

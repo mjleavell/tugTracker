@@ -10,6 +10,8 @@ import {
   NavLink,
 } from 'reactstrap';
 import { NavLink as RRNavLink } from 'react-router-dom';
+import MapIcon from '@material-ui/icons/Place';
+import LogoutIcon from '@material-ui/icons/ExitToApp';
 import './MyNavbar.scss';
 import tugImg from './tug2.png';
 
@@ -44,14 +46,20 @@ class MyNavbar extends React.Component {
                 size="small"
                 id="locations-btn"
                 onClick={this.tugLocationsView}
-              ><i className="fas fa-map-marker-alt"></i> Map</NavLink>
+              >
+                <MapIcon />
+                Map
+              </NavLink>
             </NavItem>
             <NavItem className='p-0'>
               <NavLink
                 tag={RRNavLink}
                 to="/auth"
                 onClick={logoutClickEvent}
-              ><i className="fas fa-sign-out-alt"></i> Logout</NavLink>
+              >
+                <LogoutIcon />
+                Logout
+              </NavLink>
             </NavItem>
           </Nav >
         );
