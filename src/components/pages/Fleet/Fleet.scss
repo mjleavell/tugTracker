@@ -1,10 +1,15 @@
+@media screen and (max-width: 430px) {
+
+}
+
 .Fleet {
   font-family: 'Roboto Slab', sans-serif;
   margin-top: 2rem;
   .table {
-    width: 80vw;
+    width: 75%;
     margin: 1rem auto 1rem auto;
-    background-color: rgb(97,137,185);
+    // background-color: rgb(97,137,185);
+    background-color: rgba(97,137,185, .95);
     color: white;
     border-radius: 4px;
     thead th {
@@ -26,7 +31,12 @@
         // text-decoration-style: none;
       }
     }
-
   }
-
 }
+
+
+// @media screen and (max-width: 770px) {
+//   .dash-pothole-tablet {
+//     display: none;
+//   }
+// }
