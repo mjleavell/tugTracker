@@ -36,7 +36,7 @@ class TugPopup extends React.Component {
       );
     }
     return (
-        <div className="Map-Popup">
+        <div className="Tug-Popup">
           <h4>{singleTug.name}</h4>
           <p><strong>Captain: </strong>{singleTug.captain}</p>
           <p><strong>Previous Port: </strong>{singleTug.lastPort}</p>
