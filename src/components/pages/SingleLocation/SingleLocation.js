@@ -21,10 +21,9 @@ class SingleLocation extends React.Component {
       marineTrafficRequests.getTugExtended(singleTug.mmsi).then((result) => {
         const tugInfo = result;
         console.log(tugInfo);
-        // if (tugInfo.errors.length === 1) {
-        //   this.setState({ tugs: [singleTug] });
-        // } else 
-        if (tugInfo.length === 0) {
+        if (tugInfo.errors.length === 1) {
+          this.setState({ tugs: [singleTug] });
+        } else if (tugInfo.length === 0) {
           this.setState({ tugs: [singleTug] });
         } else {
           tugInfo.forEach((item) => {
