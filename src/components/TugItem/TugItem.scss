@@ -1,26 +1,21 @@
 .Tug-Item {
   font-family: 'Roboto', sans-serif;
-  tr, td {
-    max-height: 50px;
+  td {
+    max-height: 62px;
   }
   td {
     vertical-align: 0;
   }
-  .overflow-hidden {
-    max-height: 50px;
-    overflow: hidden;
+  .captain-input {
+    width: 8rem;
   }
   .btn {
     width: 1rem;
     margin: 2px;
     color: rgb(0,40,94);
-    // color: white;
   }
-
   .btn:hover {
     color: white;
-    // background-color: rgb(190,212,233);
-    // text-decoration-style: none;
   }
   .tbl-item-btns {
     display: flex;

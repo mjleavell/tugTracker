@@ -7,9 +7,10 @@ import {
   Popup,
 } from 'react-leaflet';
 import MarkerClusterGroup from 'react-leaflet-markercluster';
-// import { Button, Row, Col } from 'reactstrap';
 import MenuItem from '@material-ui/core/MenuItem';
 import MenuList from '@material-ui/core/MenuList';
+import BackIcon from '@material-ui/icons/ArrowBack';
+import RefreshIcon from '@material-ui/icons/Refresh';
 import TugPopup from '../TugPopup/TugPopup';
 
 import './Map.scss';
@@ -76,8 +77,12 @@ class Map extends React.Component {
             {tugMarker}
           </MarkerClusterGroup>
           <MenuList id='map-menu-list' className='leaflet-control-zoom leaflet-bar leaflet-control'>
-            <MenuItem id='map-menu-back' onClick={fleetView}><i className="fas fa-arrow-left"></i></MenuItem>
-            <MenuItem id='map-menu-refresh' onClick={this.flyToLocation}><i className="fas fa-sync-alt"></i></MenuItem>
+            <MenuItem id='map-menu-back' onClick={fleetView}>
+              <BackIcon />
+            </MenuItem>
+            <MenuItem id='map-menu-refresh' onClick={this.flyToLocation}>
+              <RefreshIcon />
+            </MenuItem>
           </MenuList>
         </LeafletMap>
       </div>
