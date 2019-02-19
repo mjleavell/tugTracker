@@ -45,6 +45,7 @@ class MyNavbar extends React.Component {
                 color="light"
                 size="small"
                 id="locations-btn"
+                className="nav-icon"
                 onClick={this.tugLocationsView}
               >
                 <MapIcon />
@@ -55,6 +56,7 @@ class MyNavbar extends React.Component {
               <NavLink
                 tag={RRNavLink}
                 to="/auth"
+                className="nav-icon"
                 onClick={logoutClickEvent}
               >
                 <LogoutIcon />

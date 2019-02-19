@@ -3,7 +3,7 @@
 import React from 'react';
 import { Button, Table } from 'reactstrap';
 import './Fleet.scss';
-import AddIcon from '@material-ui/icons/AddCircle';
+import AddIcon from '@material-ui/icons/AddCircleOutline';
 import TugItem from '../../TugItem/TugItem';
 import authRequests from '../../../helpers/data/authRequests';
 import tugRequests from '../../../helpers/data/tugRequests';
@@ -97,7 +97,7 @@ class Fleet extends React.Component {
       <div className="Fleet">
         <Table hover responsive>
           <thead>
-            <tr>
+            <tr className="table-top-row">
               <th>Tug Name</th>
               <th>Home Port</th>
               <th>Captain Name</th>
@@ -108,6 +108,7 @@ class Fleet extends React.Component {
                   onClick={this.toggleModal}
                 >
                   <AddIcon />
+                  New Tug
                 </Button>
               </th>
             </tr>
