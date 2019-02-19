@@ -95,7 +95,7 @@ class Fleet extends React.Component {
 
     return (
       <div className="Fleet">
-        <Table hover>
+        <Table hover responsive>
           <thead>
             <tr>
               <th>Tug Name</th>
@@ -107,7 +107,7 @@ class Fleet extends React.Component {
                   id="add-tug-btn"
                   onClick={this.toggleModal}
                 >
-                  <AddIcon fontSize="medium"/>
+                  <AddIcon />
                 </Button>
               </th>
             </tr>

@@ -1,7 +1,9 @@
 @import './colors.scss';
 
 body {
-  background-color:rgb(190,212,233) !important;
-//   background-image: url(http://www.bluewatershipping.com/img/port3.jpg);
+  // background-color:rgb(190,212,233) !important;
+  background-image: url(https://images.unsplash.com/photo-1486231328412-f20a348f9837?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=675&q=80);
   background-attachment: fixed;
+  background-repeat: none;
+  background-size: 100vw;
 }
