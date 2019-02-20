@@ -5,7 +5,6 @@ import { Button, Table } from 'reactstrap';
 import './Fleet.scss';
 import AddIcon from '@material-ui/icons/AddCircleOutline';
 import TugItem from '../../TugItem/TugItem';
-import authRequests from '../../../helpers/data/authRequests';
 import tugRequests from '../../../helpers/data/tugRequests';
 import TugModal from '../../TugModal/TugModal';
 import TugForm from '../../TugForm/TugForm';
@@ -28,8 +27,7 @@ class Fleet extends React.Component {
   };
 
   getAllTugs() {
-    const uid = authRequests.getCurrentUid();
-    tugRequests.getTugs(uid)
+    tugRequests.getTugs()
       .then((tugs) => {
         this.setState({ tugs });
       })

@@ -2,11 +2,11 @@
 import tugRequests from './tugRequests';
 import marineTrafficRequests from './marineTrafficRequests';
 
-const getTugInfo = uid => new Promise((resolve, reject) => {
+const getTugInfo = () => new Promise((resolve, reject) => {
   const allTugs = [];
   let tugCounter = 0;
   let tugsLength = 0;
-  tugRequests.getTugs(uid).then((tugs) => {
+  tugRequests.getTugs().then((tugs) => {
     tugsLength = tugs.length;
     tugs.forEach((singleTug) => {
       marineTrafficRequests.getTugExtended(singleTug.mmsi).then((tugInfo) => {
