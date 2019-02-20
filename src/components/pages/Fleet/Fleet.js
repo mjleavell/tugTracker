@@ -95,9 +95,9 @@ class Fleet extends React.Component {
 
     return (
       <div className="Fleet">
-        <Table hover responsive>
-          <thead>
-            <tr className="table-top-row">
+        <Table hover responsive size="sm" className="mx-auto">
+          <thead id="table-top-row">
+            <tr>
               <th>Tug Name</th>
               <th>Home Port</th>
               <th>Captain Name</th>
