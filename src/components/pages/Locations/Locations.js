@@ -1,6 +1,5 @@
 import React from 'react';
 import Map from '../../Map/Map';
-import authRequests from '../../../helpers/data/authRequests';
 import smashRequest from '../../../helpers/data/smashRequest';
 import './Locations.scss';
 
@@ -10,8 +9,7 @@ class Locations extends React.Component {
   }
 
   tugsSmash = () => {
-    const uid = authRequests.getCurrentUid();
-    smashRequest.getTugInfo(uid).then((tugs) => {
+    smashRequest.getTugInfo().then((tugs) => {
       this.setState({ tugs });
     })
       .catch(err => console.error('error in tugsSmash', err));

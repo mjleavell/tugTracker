@@ -3,8 +3,8 @@ import apiKeys from '../apiKeys';
 
 const baseUrl = apiKeys.firebaseConfig.databaseURL;
 
-const getTugs = uid => new Promise((resolve, reject) => {
-  axios.get(`${baseUrl}/tugs.json?orderBy="uid"&equalTo="${uid}"`).then((result) => {
+const getTugs = () => new Promise((resolve, reject) => {
+  axios.get(`${baseUrl}/tugs.json`).then((result) => {
     const tugObject = result.data;
     const tugsArray = [];
     if (tugObject != null) {
